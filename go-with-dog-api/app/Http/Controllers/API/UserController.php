@@ -34,4 +34,16 @@ class UserController extends Controller
         return response()->json($user);
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Tag  $tag
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return response()->json(['status' => 'Supprimer avec succès']);
+    }
+
 }
