@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AddressController;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\TagController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -41,4 +42,11 @@ Route::controller(AddressController::class)->group(function () {
     Route::delete('addresses/{address}', 'destroy')->middleware('auth:api');
 });
 
+Route::controller(TagController::class)->group(function () {
+    Route::get('tags', 'index');
+    Route::get('tags/{tag}', 'show');
+    Route::post('tags', 'store')->middleware('auth:api');
+    Route::patch('tags/{tag}', 'update')->middleware('auth:api');
+    Route::delete('tags/{tag}', 'destroy')->middleware('auth:api');
+});
 Route::apiResource("users", UserController::class)->middleware('auth:api');
