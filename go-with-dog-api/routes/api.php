@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AddressController;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\BalladeController;
 use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\PlaceController;
 use App\Http\Controllers\API\TagController;
@@ -34,6 +35,13 @@ Route::controller(AddressController::class)->group(function () {
     Route::post('addresses', 'store')->middleware('auth:api');
     Route::patch('addresses/{address}', 'update')->middleware('auth:api');
     Route::delete('addresses/{address}', 'destroy')->middleware('auth:api');
+});
+Route::controller(BalladeController::class)->group(function () {
+    Route::get('ballades', 'index');
+    Route::get('ballades/{ballade}', 'show');
+    Route::post('ballades', 'store')->middleware('auth:api');
+    Route::patch('ballades/{ballade}', 'update')->middleware('auth:api');
+    Route::delete('ballades/{ballade}', 'destroy')->middleware('auth:api');
 });
 Route::controller(CategoryController::class)->group(function () {
     Route::get('categories', 'index');
