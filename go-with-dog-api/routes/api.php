@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\API\AddressController;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\PlaceController;
 use App\Http\Controllers\API\TagController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
@@ -26,14 +28,6 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('current-user', 'currentUser');
 });
 
-Route::controller(CategoryController::class)->group(function () {
-    Route::get('categories', 'index');
-    Route::get('categories/{category}', 'show');
-    Route::post('categories', 'store')->middleware('auth:api');
-    Route::patch('categories/{category}', 'update')->middleware('auth:api');
-    Route::delete('categories/{category}', 'destroy')->middleware('auth:api');
-});
-
 Route::controller(AddressController::class)->group(function () {
     Route::get('addresses', 'index');
     Route::get('addresses/{address}', 'show');
@@ -41,7 +35,20 @@ Route::controller(AddressController::class)->group(function () {
     Route::patch('addresses/{address}', 'update')->middleware('auth:api');
     Route::delete('addresses/{address}', 'destroy')->middleware('auth:api');
 });
-
+Route::controller(CategoryController::class)->group(function () {
+    Route::get('categories', 'index');
+    Route::get('categories/{category}', 'show');
+    Route::post('categories', 'store')->middleware('auth:api');
+    Route::patch('categories/{category}', 'update')->middleware('auth:api');
+    Route::delete('categories/{category}', 'destroy')->middleware('auth:api');
+});
+Route::controller(PlaceController::class)->group(function () {
+    Route::get('places', 'index');
+    Route::get('places/{places}', 'show');
+    Route::post('places', 'store')->middleware('auth:api');
+    Route::patch('places/{place}', 'update')->middleware('auth:api');
+    Route::delete('places/{place}', 'destroy')->middleware('auth:api');
+});
 Route::controller(TagController::class)->group(function () {
     Route::get('tags', 'index');
     Route::get('tags/{tag}', 'show');
