@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\API\AddressController;
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +17,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::controller(AuthController::class)->group(function () {
+    Route::post('login', 'login');
+    Route::post('register', 'register');
+    Route::post('logout', 'logout');
+    Route::post('refresh', 'refresh');
+    Route::get('current-user', 'currentUser');
 });
+
+Route::controller(CategoryController::class)->group(function () {
+    Route::get('categories', 'index');
+    Route::get('categories/{category}', 'show');
+    Route::post('categories', 'store')->middleware('auth:api');
+    Route::patch('categories/{category}', 'update')->middleware('auth:api');
+    Route::delete('categories/{category}', 'destroy')->middleware('auth:api');
+});
+
+Route::controller(AddressController::class)->group(function () {
+    Route::get('addresses', 'index');
+    Route::get('addresses/{address}', 'show');
+    Route::post('addresses', 'store')->middleware('auth:api');
+    Route::patch('addresses/{address}', 'update')->middleware('auth:api');
+    Route::delete('addresses/{address}', 'destroy')->middleware('auth:api');
+});
+
+Route::apiResource("users", UserController::class)->middleware('auth:api');
