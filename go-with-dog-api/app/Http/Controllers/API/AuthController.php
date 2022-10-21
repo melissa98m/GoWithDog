@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Register as MailRegister;
 
 class AuthController extends Controller
 {
@@ -79,6 +81,8 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
             'roles' => $request->roles,
         ]);
+        Mail::to('melissa.mangione@gmail.com') //permet définir de qui est envoyé le mail
+        ->send(new MailRegister($user));
 
         $token = Auth::login($user);
         return response()->json([
