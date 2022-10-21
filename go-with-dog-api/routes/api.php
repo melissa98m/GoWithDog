@@ -52,7 +52,7 @@ Route::controller(CategoryController::class)->group(function () {
 });
 Route::controller(PlaceController::class)->group(function () {
     Route::get('places', 'index');
-    Route::get('places/{places}', 'show');
+    Route::get('places/{place}', 'show');
     Route::post('places', 'store')->middleware('auth:api');
     Route::patch('places/{place}', 'update')->middleware('auth:api');
     Route::delete('places/{place}', 'destroy')->middleware('auth:api');
