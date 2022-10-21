@@ -111,7 +111,7 @@ class BalladeController extends Controller
             'tag' => 'required',
         ]);
 
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('ballade_image')) {
             if (Ballade::findOrFail($ballade->id)->ballade_image){
                 Storage::delete("/public/uploads/ballade/".Ballade::findOrFail($ballade->id)->ballade_image);
             }
