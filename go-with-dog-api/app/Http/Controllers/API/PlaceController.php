@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Place;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PlaceController extends Controller
 {
@@ -30,7 +31,6 @@ class PlaceController extends Controller
             'status' => 'Success',
             'data' => $places
         ]);
-
     }
 
     /**
@@ -44,13 +44,20 @@ class PlaceController extends Controller
         $request->validate([
             'place_name' => 'required|max:200',
             'place_description' => 'required',
+            'place_image' => 'nullable|mimes:png,jpg,jpeg|max:2048',
             'user' => 'required',
             'category' => 'required',
             'address' => 'required',
         ]);
+        if ($request->hasFile('place_image')) {
+            $filename = $this->getFilename($request);
+        } else {
+            $filename = Null;
+        }
         $place = Place::create([
             'place_name' => $request->place_name,
             'place_description' => $request->place_description,
+            'place_image' => $filename,
             'address' => $request->address,
             'category' => $request->category,
             'user' => $request->user,
@@ -91,13 +98,25 @@ class PlaceController extends Controller
         $this->validate($request, [
             'place_name' => 'required|max:200',
             'place_description' => 'required',
+            'place_image' => 'nullable|mimes:png,jpg,jpeg|max:2048',
             'user' => 'required',
             'category' => 'required',
             'address' => 'required',
         ]);
+        if ($request->hasFile('place_image')) {
+            if (Place::findOrFail($place->id)->place_image){
+                Storage::delete("/public/uploads/places/".Place::findOrFail($place->id)->place_image);
+            }
+            $filename = $this->getFilename($request);
+            $request->place_image = $filename;
+        }
+        if ($request->place_image == null){
+            $request->place_image = Place::findOrFail($place->id)->place_image;
+        }
         $place->update([
             'place_name' => $request->place_name,
             'place_description' => $request->place_description,
+            'place_image' => $filename,
             'address' => $request->address,
             'category' => $request->category,
             'user' => $request->user,
@@ -126,5 +145,14 @@ class PlaceController extends Controller
         return response()->json([
             'status' => 'Supprimer avec succès'
         ]);
+    }
+    public function getFilename(Request $request): string
+    {
+        $filenameWithExt = $request->file('place_image')->getClientOriginalName();
+        $filenameWithoutExt = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        $extension = $request->file('place_image')->getClientOriginalExtension();
+        $filename = $filenameWithoutExt . '_' . time() . '.' . $extension;
+        $path = $request->file('place_image')->storeAs('public/uploads/places', $filename);
+        return $filename;
     }
 }
