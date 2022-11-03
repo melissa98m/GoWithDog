@@ -64,7 +64,7 @@
                 </tr>
                 <tr>
                     <td style="text-align:center;">
-                        <p style="font-size:14px; line-height:18px; margin:0 0 0; color: #44455f">&copy; <strong>www.gowithdog.com</strong> </p>
+                        <p style="font-size:14px; line-height:18px; margin:0 0 0; color: #44455f">&copy;<strong>www.gowithdog.com</strong> </p>
                     </td>
                 </tr>
                 <tr>
