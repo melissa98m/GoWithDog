@@ -22,14 +22,19 @@ class BalladeController extends Controller
             'data' => $ballades
         ]);
     }
-    public function sortByDate()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sortByDateDesc()
     {
-        $ballades = Ballade::with(['user', 'tag'])
-            ->orderBy('created_at', 'desc')
+        $balladesdesc = Ballade::with(['user', 'tag'])
+            ->orderBy("created_at", 'desc')
             ->get();
         return response()->json([
             'status' => 'Success',
-            'data' => $ballades
+            'data' => $balladesdesc
         ]);
     }
 

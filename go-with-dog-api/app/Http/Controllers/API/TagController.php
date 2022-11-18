@@ -16,10 +16,10 @@ class TagController extends Controller
      */
     public function index()
     {
-        $categories = DB::table('categories')
+        $tags = DB::table('tags')
             ->get()
             ->toArray();
-        return response()->json(['status' => 'Success', 'data' => $categories]);
+        return response()->json(['status' => 'Success', 'data' => $tags]);
     }
 
     /**
