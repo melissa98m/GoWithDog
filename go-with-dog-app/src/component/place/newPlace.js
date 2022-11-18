@@ -199,7 +199,7 @@ function NewPlace(props) {
                                         labelId="category-select"
                                         id="category-select"
                                         value={category}
-                                        label="Type"
+                                        label="Categorie de lieu"
                                         onChange={(e) => setCategory(e.target.value)}
                                         sx={{height: 50}}
                                         variant="outlined"
