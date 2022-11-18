@@ -1,0 +1,19 @@
+#navbar {
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  width: 90%;
+  border-radius: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 15px;
+}
+#logo {
+  width: 70px;
+  margin-left: 5px;
+}
+.icon-header {
+  color: #303132;
+}
