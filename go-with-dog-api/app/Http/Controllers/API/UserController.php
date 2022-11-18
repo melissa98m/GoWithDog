@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -44,6 +45,15 @@ class UserController extends Controller
     {
         $user->delete();
         return response()->json(['status' => 'Supprimer avec succès']);
+    }
+
+    public function Current()
+    {
+        $current = Auth::id();
+        return response()->json(
+            ['status' => 'Success',
+            'data' => $current
+            ]);
     }
 
 }

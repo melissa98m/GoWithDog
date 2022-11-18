@@ -7,6 +7,7 @@ use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\PlaceController;
 use App\Http\Controllers\API\TagController;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\ContactController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,7 @@ Route::controller(AddressController::class)->group(function () {
 Route::controller(BalladeController::class)->group(function () {
     Route::get('ballades', 'index');
     Route::get('ballades/{ballade}', 'show');
+    Route::get('ballades/sortDateDesc', 'sortByDateDesc');
     Route::post('ballades', 'store')->middleware('auth:api');
     Route::patch('ballades/{ballade}', 'update')->middleware('auth:api');
     Route::delete('ballades/{ballade}', 'destroy')->middleware('auth:api');
@@ -64,4 +66,13 @@ Route::controller(TagController::class)->group(function () {
     Route::patch('tags/{tag}', 'update')->middleware('auth:api');
     Route::delete('tags/{tag}', 'destroy')->middleware('auth:api');
 });
-Route::apiResource("users", UserController::class)->middleware('auth:api');
+Route::controller(ContactController::class)->group(function () {
+    Route::post('contact', 'store');
+});
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('users/current-user', 'Current');
+    Route::get('users', 'index')->middleware('auth:api');
+    Route::get('users/{user}', 'show')->middleware('auth:api');
+    Route::delete('users/{user}', 'destroy')->middleware('auth:api');
+});

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Place;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class PlaceController extends Controller
@@ -22,16 +23,7 @@ class PlaceController extends Controller
             'data' => $places
         ]);
     }
-    public function sortByDate(): JsonResponse
-    {
-        $places = Place::with(['user', 'category', 'address'])
-            ->orderBy('created_at', 'desc')
-            ->get();
-        return response()->json([
-            'status' => 'Success',
-            'data' => $places
-        ]);
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -41,11 +33,12 @@ class PlaceController extends Controller
      */
     public function store(Request $request)
     {
+        $current = Auth::id(); // recupere l'id du current user
+
         $request->validate([
             'place_name' => 'required|max:200',
             'place_description' => 'required',
             'place_image' => 'nullable|mimes:png,jpg,jpeg|max:2048',
-            'user' => 'required',
             'category' => 'required',
             'address' => 'required',
         ]);
@@ -60,12 +53,12 @@ class PlaceController extends Controller
             'place_image' => $filename,
             'address' => $request->address,
             'category' => $request->category,
-            'user' => $request->user,
+            'user' => $current,
         ]);
 
         $place->address = $place->address()->get()[0];
         $place->category = $place->category()->get()[0];
-        $place->user = $place->user()->get()[0];
+       $place->user = $place->user()->get()[0];
         return response()->json([
             'status' => 'Success',
             'data' => $place,
