@@ -131,14 +131,12 @@ function Home() {
    <Typography variant="body" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>
           ) : (
           <Box sx={{ maxWidth: '90%' , marginBottom: "150px" }}>
+          <MapContainer center={[45.183567840163185, 5.718114920600324]} zoom={9} scrollWheelZoom={true} sx={{ marginLeft: '30px' , marginRight:"auto" , textAlign: "center"}}>
+            <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
                                   {places.map(({id, place_name, address , category}) => {
                                       return (
                                       <Box sx={{ marginLeft: '30px' , marginRight:"auto" , textAlign: "center"}}>
-                                                  <MapContainer center={[address.latitude, address.longitude]} zoom={12} scrollWheelZoom={true} sx={{ marginLeft: '30px' , marginRight:"auto" , textAlign: "center"}}>
-                                                      <TileLayer
-                                                          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                                          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                                      />
                                                       <Marker position={[address.latitude, address.longitude]} icon={myIcon} key={id}>
                                                           <Popup>
                                                           <strong>{category.category_name}</strong> <br/>
@@ -146,18 +144,12 @@ function Home() {
                                                               {address.address} - {address.postal_code} {address.city}
                                                           </Popup>
                                                       </Marker>
-
-                                                  </MapContainer>
                                                   </Box>
-
                                       )
                                   })}
-
+                   </MapContainer>
                      </Box>
-
-
-                          )
-                          }
+                          )}
 
 
 
