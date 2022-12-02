@@ -57,11 +57,11 @@ function Places() {
                                 {data.map(({id, place_name, place_description , place_image, category, address}) => {
                                     return (
 
-                                        <Card sx={{ maxWidth: 500 , display: 'inline-block' , margin: 3 }}>
+                                        <Card sx={{ maxWidth: 500 , display: 'inline-block' , margin: 3 , height: '500px'}}>
                                             <CardMedia
                                                 component="img"
                                                 height="140"
-                                                image= {`http://127.0.0.1:8000/storage/public/uploads/places/${place_image}`}
+                                                src={`http://127.0.0.1:8000/storage/uploads/places/${place_image}`}
                                                 alt={place_name}
                                             />
                                             <CardContent>
