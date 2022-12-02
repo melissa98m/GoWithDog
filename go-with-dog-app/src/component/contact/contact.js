@@ -4,6 +4,8 @@ import update from "immutability-helper";
 import {useForm, Controller} from "react-hook-form";
 import axios from "axios";
 
+
+
 const Contact = () => {
 
     const [id, setID] = useState("");
@@ -15,6 +17,7 @@ const Contact = () => {
     const { register, control, handleSubmit, formState: { errors } } = useForm({defaultValues: {contact_email: '' ,
     contact_content: '' , contact_subject: ''
     }});
+    const [message , setMessage] = useState("");
 
     //Méthode d'ajout de joueurs
      const newContact = async () => {
@@ -24,7 +27,8 @@ const Contact = () => {
        formData.append("subject", subject);
        formData.append("contenu", contenu);
        await axios
-         .post(`http://127.0.0.1:8000/api/contact`, formData)
+         .post(`http://127.0.0.1:8000/api/contact`, formData ,
+         setMessage(<Alert severity="success" autoHideDuration={3000}>Message envoyé</Alert>))
          .catch(({ response }) => {
            if (response.status != 200) {
 
@@ -108,6 +112,7 @@ const Contact = () => {
                                                      ) : ''}
                         <Box className="action-button">
                             <Button type="submit" sx={{m: 3}} variant="contained">Envoyer</Button>
+                             {message}
                         </Box>
                     </FormControl>
                 </form>
