@@ -20,6 +20,7 @@ import Places from "./component/place/places";
 import Place from "./component/place/place";
 import Ballades from "./component/ballade/ballades";
 import Ballade from "./component/ballade/ballade";
+import Address from "./component/address/address";
 import Tag from "./component/tag/tag";
 import User from "./component/user/user";
 import {Navbar} from "./component/_partials/_navbar/_navbar";
@@ -68,6 +69,7 @@ function CustomTheme() {
                     <Route exact path="places" element={<Places/>}>Places</Route>
                     <Route exact path="ballades" element={<Ballades/>}>Ballades</Route>
                     <Route exact path="logout" element={<Logout/>}>Logout</Route>
+                     <Route exact path="address" element={auth.loggedAndAdmin() ? <Address/> : <Home adminMessage='unauthorizedRole'/> }>Address</Route>
                     <Route exact path="place" element={auth.loggedAndAdmin() ? <Place/> : <Home adminMessage='unauthorizedRole'/> }>Place</Route>
                     <Route exact path="ballade" element={auth.loggedAndAdmin() ? <Ballade/> : <Home adminMessage='unauthorizedRole'/> }>Ballade</Route>
                     <Route exact path="categorie" element={auth.loggedAndAdmin() ? <Category/> : <Home adminMessage='unauthorizedRole'/> }>Categorie</Route>

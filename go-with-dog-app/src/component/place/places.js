@@ -13,6 +13,7 @@ import { Icon } from 'leaflet'
 import marker from "../../assets/icon.svg";
 import auth from "../../services/auth/token";
 import NewPlace from "./newPlace";
+import NewAddress from "../address/newAddress";
 
 
 
@@ -50,10 +51,14 @@ function Places() {
     const handleDataChange = async (dataChange) => {
         await setData(dataChange)
     }
-    let btn
-        if(auth.loggedAndUser() || auth.loggedAndAdmin()) {
-         btn = <NewPlace newValue={{data}} handleDataChange={handleDataChange} />
+    let btn;
+    let newAddress  ;
+
+       if(auth.loggedAndUser() || auth.loggedAndAdmin()) {
+         btn = <NewPlace newValue={{data}} handleDataChange={handleDataChange} /> ;
+         newAddress =  <NewAddress newValue={{data}} handleDataChange={handleDataChange} />
         }
+
 
 
     return <Container maxWidth="xl" id="place">
@@ -62,7 +67,10 @@ function Places() {
                 <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des lieux...</Typography>
             ) : (
                 <Box sx={{ maxWidth: '90%' }}>
-                {btn}
+               <Box sx={{ display: 'flex'}}>
+                <Typography sx={{ marginRight: "10px" }}>Créer un lieu :{btn} </Typography>
+                 <Typography>Créer une adresse : {newAddress}</Typography>
+                </Box>
                                 {data.map(({id, place_name, place_description , place_image, category, address}) => {
                                     return (
 
