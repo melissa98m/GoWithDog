@@ -54,19 +54,9 @@ const filterPlaces = (query, place) => {
                        <Button color="secondary" href='/ballades'>Ballades</Button>
                     {auth.loggedAndAdmin() ? (
                         <Box>
-                            <Button color="secondary" href='/categorie'>Categorie</Button>
+                            <Button color="secondary" href='/dashboard'>Dashboard</Button>
                         </Box>
                     ) : null }
-                    {auth.loggedAndAdmin() ? (
-                                            <Box>
-                                               <Button color="secondary" href='/place'>Place</Button>
-                                            </Box>
-                                         ) : null }
-                     {auth.loggedAndAdmin() ? (
-                        <Box>
-                           <Button color="secondary" href='/tag'>Tag</Button>
-                        </Box>
-                     ) : null }
                     <Box>
                     <Button color="secondary" href='/contact'>Contact</Button>
                     </Box>

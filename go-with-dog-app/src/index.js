@@ -23,6 +23,7 @@ import Ballade from "./component/ballade/ballade";
 import Address from "./component/address/address";
 import Tag from "./component/tag/tag";
 import User from "./component/user/user";
+import Dashboard from "./component/dashboard/dashboard";
 import {Navbar} from "./component/_partials/_navbar/_navbar";
 import {Footer} from "./component/_partials/_footer/_footer";
 import Login from "./services/auth/login";
@@ -72,9 +73,10 @@ function CustomTheme() {
                      <Route exact path="address" element={auth.loggedAndAdmin() ? <Address/> : <Home adminMessage='unauthorizedRole'/> }>Address</Route>
                     <Route exact path="place" element={auth.loggedAndAdmin() ? <Place/> : <Home adminMessage='unauthorizedRole'/> }>Place</Route>
                     <Route exact path="ballade" element={auth.loggedAndAdmin() ? <Ballade/> : <Home adminMessage='unauthorizedRole'/> }>Ballade</Route>
-                    <Route exact path="categorie" element={auth.loggedAndAdmin() ? <Category/> : <Home adminMessage='unauthorizedRole'/> }>Categorie</Route>
+                    <Route exact path="category" element={auth.loggedAndAdmin() ? <Category/> : <Home adminMessage='unauthorizedRole'/> }>Categorie</Route>
                     <Route exact path="tag" element={auth.loggedAndAdmin() ? <Tag/> : <Home adminMessage='unauthorizedRole'/> }>Tag</Route>
                     <Route exact path="user" element={auth.loggedAndAdmin() ? <User/> : <Home adminMessage='unauthorizedRole'/> }>User</Route>
+                    <Route exact path="dashboard" element={auth.loggedAndAdmin() ? <Dashboard/> : <Home adminMessage='unauthorizedRole'/> }>Dashboard</Route>
                     <Route exact path="contact" element={<Contact/>}>Contact</Route>
                     <Route path="*" element={
                         <div>
