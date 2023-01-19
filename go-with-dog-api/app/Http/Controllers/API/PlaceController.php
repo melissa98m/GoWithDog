@@ -88,11 +88,11 @@ class PlaceController extends Controller
      */
     public function update(Request $request, Place $place)
     {
+        $current = Auth::id();
         $this->validate($request, [
             'place_name' => 'required|max:200',
             'place_description' => 'required',
             'place_image' => 'nullable|mimes:png,jpg,jpeg|max:2048',
-            'user' => 'required',
             'category' => 'required',
             'address' => 'required',
         ]);
@@ -112,7 +112,7 @@ class PlaceController extends Controller
             'place_image' => $filename,
             'address' => $request->address,
             'category' => $request->category,
-            'user' => $request->user,
+            'user' => $current,
         ]);
 
         $place->address = $place->address()->get()[0];

@@ -11,6 +11,9 @@ import DisplayPlace from "./displayPlace";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Icon } from 'leaflet'
 import marker from "../../assets/icon.svg";
+import auth from "../../services/auth/token";
+import NewPlace from "./newPlace";
+
 
 
 function Places() {
@@ -47,6 +50,11 @@ function Places() {
     const handleDataChange = async (dataChange) => {
         await setData(dataChange)
     }
+    let btn
+        if(auth.loggedAndUser() || auth.loggedAndAdmin()) {
+         btn = <NewPlace newValue={{data}} handleDataChange={handleDataChange} />
+        }
+
 
     return <Container maxWidth="xl" id="place">
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Tous les lieux</Typography>
@@ -54,6 +62,7 @@ function Places() {
                 <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des lieux...</Typography>
             ) : (
                 <Box sx={{ maxWidth: '90%' }}>
+                {btn}
                                 {data.map(({id, place_name, place_description , place_image, category, address}) => {
                                     return (
 

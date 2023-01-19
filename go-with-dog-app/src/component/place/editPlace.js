@@ -16,6 +16,7 @@ import {useEffect, useState} from "react";
 import update from "immutability-helper";
 import {useForm, Controller} from "react-hook-form";
 import axios from "axios";
+import CloseIcon from '@mui/icons-material/Close';
 
 function EditPlace(props) {
     const [id, setID] = useState("");
@@ -25,10 +26,10 @@ function EditPlace(props) {
     const [cImage, setCImage] = useState(props.updateValue.place_image);
 
     // One of ...
-    const [type, setType] = useState(undefined);
+    const [category, setCategory] = useState(undefined);
     const [address, setAddress] = useState(undefined);
     // List All
-    const [tags, setTypes] = useState({});
+    const [categories, setCategories] = useState({});
     const [addresses, setAddresses] = useState({});
 
     const [onePlace, setOnePlace] = useState("");
@@ -40,7 +41,7 @@ function EditPlace(props) {
         place_name: props.updateValue.place_name,
         place_description: props.updateValue.place_description,
         place_image: props.updateValue.place_image,
-        type: props.updateValue.type,
+        category: props.updateValue.category,
         address: props.updateValue.address,
     } });
 
@@ -49,7 +50,7 @@ function EditPlace(props) {
     }, [])
 
     let getAlls = async () => {
-        await axios.get("http://127.0.0.1:8000/api/tags/").then((actualData) => { setTypes(actualData.data.data) });
+        await axios.get("http://127.0.0.1:8000/api/categories/").then((actualData) => { setCategories(actualData.data.data) });
         await axios.get("http://127.0.0.1:8000/api/addresses/").then((actualData) => { setAddresses(actualData.data.data) });
     }
 
@@ -59,7 +60,7 @@ function EditPlace(props) {
             let formData = new FormData();
             formData.append("place_name",  place_name);
             formData.append("place_description", place_description);
-            formData.append("type",  type ? `${type}` : `${props.updateValue.type.id}`);
+            formData.append("category",  category ? `${category}` : `${props.updateValue.category.id}`);
             formData.append("address", address ? `${address}` : `${props.updateValue.address.id}`);
             if (place_image){
                 formData.append("place_image", place_image);
@@ -71,7 +72,7 @@ function EditPlace(props) {
                 place_name: place_name ? place_name : onePlace.place_name,
                 place_description: place_description ? place_description : onePlace.place_description,
                 place_image: place_image ? place_image : onePlace.place_image,
-                type: type ? type : onePlace.type.id,
+                category: category ? category : onePlace.category.id,
                 address: address ? address : onePlace.address.id,
             }
 
@@ -104,7 +105,7 @@ function EditPlace(props) {
                     place_name: props.updateValue.place_name,
                     place_description: props.updateValue.place_description,
                     place_image: props.updateValue.place_image,
-                    type: props.updateValue.type,
+                    category: props.updateValue.category,
                     address: props.updateValue.address
                 })
                 setCImage(props.updateValue.place_image);
@@ -120,6 +121,9 @@ function EditPlace(props) {
             aria-describedby="child-modal-description"
         >
             <Box className="modal-crud modal-crud-place" sx={{bgcolor: 'background.default'}}>
+               <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
+                           <Button variant="outlined"  color="secondary" onClick={() => setShowEdit(false)}><CloseIcon /></Button>
+                            </Grid>
                 <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="edit-place-title">Editer un lieu</Typography>
                 <form onSubmit={handleSubmit(editPlaceForm)}>
                     <Grid container spacing={8}>
@@ -195,23 +199,23 @@ function EditPlace(props) {
                         </Grid>
                         <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'column'}}>
                             <Controller
-                              name="type"
+                              name="category"
                               control={control}
                               render={() => (
                                   <FormControl sx={{ m: 1, mt: 5, minWidth: 120 }} size="small">
-                                      <InputLabel id="type-select">Type</InputLabel>
+                                      <InputLabel id="category-select">Category</InputLabel>
                                       <Select
-                                        labelId="type-select"
-                                        id="type-select"
-                                        defaultValue={props.updateValue.type.id}
-                                        label="Type"
-                                        onChange={(e) => setType(e.target.value)}
+                                        labelId="category-select"
+                                        id="category-select"
+                                        defaultValue={props.updateValue.category.id}
+                                        label="Category"
+                                        onChange={(e) => setCategory(e.target.value)}
                                         sx={{height: 50}}
                                         variant="outlined"
                                       >
-                                      {tags.map((type) => {
+                                      {categories.map((category) => {
                                           return(
-                                              <MenuItem key={type.id} value={type.id}>{type.name_type}</MenuItem>
+                                              <MenuItem key={category.id} value={category.id}>{category.category_name}</MenuItem>
                                           )
                                       })}
                                       </Select>
@@ -219,7 +223,7 @@ function EditPlace(props) {
                               )}
                             />
                             <Controller
-                              name="address"
+                              name="addresse"
                               control={control}
                               render={() => (
                                   <FormControl sx={{ m: 1, mt: 5, minWidth: 120 }} size="small">
@@ -246,7 +250,6 @@ function EditPlace(props) {
                         </Grid>
                         <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
                             <Button type="submit" sx={{m: 3}} variant="contained">Envoyer</Button>
-                            <Button variant="outlined" onClick={() => setShowEdit(false)}>Fermer</Button>
                         </Grid>
                     </Grid>
                 </form>

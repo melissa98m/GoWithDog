@@ -1,7 +1,8 @@
-import {Box, Button, FormControl, Modal, Snackbar, Typography, Alert} from "@mui/material";
+import {Box, Button, FormControl, Modal, Snackbar, Typography, Alert , Grid} from "@mui/material";
 import {useEffect, useState} from "react";
 import update from "immutability-helper";
 import {DeleteForeverRounded} from "@mui/icons-material";
+import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
 
 function DeletePlace(props) {
@@ -36,7 +37,7 @@ function DeletePlace(props) {
                 sx={{mx: 2}}
                 onClick={ () => {
                     setShowDelete(true)
-                    setOnePlace({id: props.deleteValue.id, name_place: props.deleteValue.name_place} )
+                    setOnePlace({id: props.deleteValue.id, place_name: props.deleteValue.place_name} )
                 } }
             >
                 <DeleteForeverRounded/>
@@ -50,14 +51,16 @@ function DeletePlace(props) {
                 aria-describedby="child-modal-description"
             >
                 <Box className="modal-crud modal-crud-place" sx={{bgcolor: 'background.default'}}>
+                    <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
+                    <Button variant="outlined"  color="secondary" onClick={() => setShowDelete(false)}><CloseIcon /></Button>
+                    </Grid>
                     <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="delete-place-title">Supprimer un lieux</Typography>
                     <FormControl>
                         <Box>
-                            êtes vous sur de vouloir supprimer le lieu : {onePlace.name_place} ?
+                            êtes vous sur de vouloir supprimer le lieu : {onePlace.place_name} ?
                         </Box>
                         <Box className="action-button">
-                            <Button sx={{m: 3}} type="submit" variant="contained" onClick={deletePlace}>Envoyer</Button>
-                            <Button variant="outlined" onClick={() => setShowDelete(false)}>Fermer</Button>
+                            <Button sx={{m: 3}} type="submit" variant="contained" onClick={deletePlace}>Supprimer</Button>
                         </Box>
                     </FormControl>
                 </Box>

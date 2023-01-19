@@ -15,6 +15,7 @@ import {useEffect, useState} from "react";
 import update from "immutability-helper";
 import {useForm, Controller} from "react-hook-form";
 import axios from "axios";
+import CloseIcon from '@mui/icons-material/Close';
 
 
 function NewPlace(props) {
@@ -24,8 +25,8 @@ function NewPlace(props) {
     const [place_description, setDescription] = useState("");
     const [place_image, setImage] = useState("");
     // One of ...
-    const [category, setCategory] = useState({});
-    const [address, setAddress] = useState({});
+    const [category, setCategory] = useState(undefined);
+    const [address, setAddress] = useState(undefined);
 
 
     // List All
@@ -114,6 +115,9 @@ function NewPlace(props) {
             aria-describedby="child-modal-description"
         >
             <Box className="modal-crud modal-crud-place" sx={{bgcolor: 'background.default'}}>
+                <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
+                                          <Button variant="outlined"  color="secondary" onClick={() => setShowNew(false)}><CloseIcon /></Button>
+                                           </Grid>
                 <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="new-place-title">Nouveau lieu</Typography>
                 <form onSubmit={handleSubmit(newPlaceForm)}>
                     <Grid container spacing={8}>
@@ -194,7 +198,7 @@ function NewPlace(props) {
                               defaultValue=""
                               render={() => (
                                   <FormControl sx={{ m: 1, mt: 5, minWidth: 120 }} size="small">
-                                      <InputLabel id="category-select">Type</InputLabel>
+                                      <InputLabel id="category-select">Category</InputLabel>
                                       <Select
                                         labelId="category-select"
                                         id="category-select"
@@ -241,7 +245,6 @@ function NewPlace(props) {
                         </Grid>
                         <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
                             <Button type="submit" sx={{m: 3}} variant="contained">Envoyer</Button>
-                            <Button variant="outlined" onClick={() => setShowNew(false)}>Fermer</Button>
                         </Grid>
                     </Grid>
                 </form>
