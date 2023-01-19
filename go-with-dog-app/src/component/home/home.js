@@ -17,7 +17,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet'
 import marker from "../../assets/icon.svg";
-
+import DisplayBallade from "../ballade/displayBallade";
 
 
 function Home() {
@@ -32,6 +32,9 @@ function Home() {
      iconUrl: marker,
      iconSize: [32,32]
     })
+       const handleDataChange = async (dataChange) => {
+            await setData(dataChange)
+        }
 
 
 
@@ -64,7 +67,7 @@ function Home() {
             <Typography variant="body" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>
         ) : (
             <Box sx={{ maxWidth: '100%' , marginTop: "2%"}}>
-                        {data.slice(0,4).map(({id, ballade_name ,ballade_description ,ballade_image, distance , denivele , tag , created_at , user  }) => {
+                        {data.slice(0,4).map(({id, ballade_name ,ballade_description ,ballade_image, distance , denivele , tag , ballade_latitude , ballade_longitude , created_at , user  }) => {
                 return (
                 <Card sx={{ maxWidth: 300 , display: 'inline-block'  , marginRight: "25px"}} key={id} color="success">
                     <CardHeader
@@ -92,9 +95,9 @@ function Home() {
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" color="secondary" sx={{textAlign: "center" , marginRight: "auto", marginLeft: "auto"}} href={`ballade/${id}`}>
-                                <LoupeIcon />
-                            Plus de détails</Button>
+                        <Box sx={{display: 'flex', justifyContent: 'right'}}>
+                        <DisplayBallade DisplayBalladeValue={{id, ballade_name, ballade_description, ballade_image, tag,  ballade_latitude , ballade_longitude,denivele , distance ,  data}} handleDataChange={handleDataChange} />
+                         </Box>
                     </CardActions>
                 </Card>
 

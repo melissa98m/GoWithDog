@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Ballade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class BalladeController extends Controller
@@ -46,6 +47,7 @@ class BalladeController extends Controller
      */
     public function store(Request $request)
     {
+        $current = Auth::id();
         $request->validate([
             'ballade_name' => 'required|max:200',
             'ballade_description' => 'required',
@@ -54,7 +56,6 @@ class BalladeController extends Controller
             'ballade_image' => 'nullable|mimes:png,jpg,jpeg|max:2048',
             'ballade_latitude'=> 'required',
             'ballade_longitude'=> 'required',
-            'user' => 'required',
             'tag' => 'required',
         ]);
         if ($request->hasFile('ballade_image')) {
@@ -70,7 +71,7 @@ class BalladeController extends Controller
             'ballade_image' => $filename,
             'ballade_latitude' => $request->ballade_latitude,
             'ballade_longitude' => $request->ballade_longitude,
-            'user' => $request->user,
+            'user' => $current,
             'tag' => $request->tag,
         ]);
 
@@ -104,6 +105,7 @@ class BalladeController extends Controller
      */
     public function update(Request $request, Ballade $ballade)
     {
+        $current = Auth::id();
         $this->validate($request, [
             'ballade_name' => 'required|max:200',
             'ballade_description' => 'required',
@@ -112,7 +114,6 @@ class BalladeController extends Controller
             'ballade_image' => 'nullable|mimes:png,jpg,jpeg|max:2048',
             'ballade_latitude'=> 'required',
             'ballade_longitude'=> 'required',
-            'user' => 'required',
             'tag' => 'required',
         ]);
 
@@ -136,7 +137,7 @@ class BalladeController extends Controller
             'ballade_image' => $filename,
             'ballade_latitude' => $request->ballade_latitude,
             'ballade_longitude' => $request->ballade_longitude,
-            'user' => $request->user,
+            'user' => $current,
             'tag' => $request->tag,
         ]);
 
