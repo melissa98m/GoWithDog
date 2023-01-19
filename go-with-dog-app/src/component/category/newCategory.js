@@ -1,8 +1,9 @@
-import {Box, Button, FormControl, Modal, Snackbar, TextField, Typography, Alert, Input} from "@mui/material";
+import {Box, Button, FormControl, Modal, Snackbar, TextField, Typography, Alert, Input , Grid} from "@mui/material";
 import {useState} from "react";
 import update from "immutability-helper";
 import {useForm, Controller} from "react-hook-form";
 import axios from "axios";
+import CloseIcon from '@mui/icons-material/Close';
 
 function NewCategory(props) {
 
@@ -38,14 +39,17 @@ function NewCategory(props) {
     return (<Box>
         <Button variant="contained" onClick={() => setShowNew(true)}>Ajouter</Button>
         <Modal
-            id="modal-category-container"
+            id="modal-crud-container"
             hideBackdrop
             open={newCategory}
             onClose={() => setShowNew(false)}
             aria-labelledby="new-category-title"
             aria-describedby="child-modal-description"
         >
-            <Box className="modal-category" sx={{bgcolor: 'background.default'}}>
+            <Box className="modal-crud modal-crud-ballade" sx={{bgcolor: 'background.default'}}>
+              <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
+               <Button variant="outlined"  color="secondary" onClick={() => setShowNew(false)}><CloseIcon /></Button>
+                </Grid>
                 <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="new-category-title">Nouvelle categorie de vin</Typography>
                 <form onSubmit={handleSubmit(newCategoryForm)}>
                     <FormControl>
@@ -74,7 +78,6 @@ function NewCategory(props) {
                         ) : ''}
                         <Box className="action-button">
                             <Button type="submit" sx={{m: 3}} variant="contained">Envoyer</Button>
-                            <Button variant="outlined" onClick={() => setShowNew(false)}>Fermer</Button>
                         </Box>
                     </FormControl>
                 </form>

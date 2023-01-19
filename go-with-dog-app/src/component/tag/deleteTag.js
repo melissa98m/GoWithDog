@@ -1,8 +1,9 @@
-import {Box, Button, FormControl, Modal, Snackbar, Typography, Alert} from "@mui/material";
+import {Box, Button, FormControl, Modal, Snackbar, Typography, Alert , Grid} from "@mui/material";
 import {useEffect, useState} from "react";
 import update from "immutability-helper";
 import {DeleteForeverRounded} from "@mui/icons-material";
 import axios from "axios";
+import CloseIcon from '@mui/icons-material/Close';
 
 function DeleteTag(props) {
 
@@ -50,6 +51,9 @@ function DeleteTag(props) {
                 aria-describedby="child-modal-description"
             >
                 <Box className="modal-crud modal-crud-tag" sx={{bgcolor: 'background.default'}}>
+                <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
+                 <Button variant="outlined"  color="secondary" onClick={() => setShowDelete(false)}><CloseIcon /></Button>
+                  </Grid>
                     <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="delete-tag-title">Supprimer un tag de
                         ballade</Typography>
                     <FormControl>
@@ -57,8 +61,7 @@ function DeleteTag(props) {
                             êtes vous sur de vouloir supprimer le tag : {oneTag.tag_name}?
                         </Box>
                         <Box className="action-button">
-                            <Button sx={{m: 3}} type="submit" variant="contained" onClick={deleteTag}>Envoyer</Button>
-                            <Button variant="outlined" onClick={() => setShowDelete(false)}>Fermer</Button>
+                            <Button sx={{m: 3}} type="submit" variant="contained" onClick={deleteTag}>Supprimer</Button>
                         </Box>
                     </FormControl>
                 </Box>

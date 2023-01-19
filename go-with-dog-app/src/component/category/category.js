@@ -71,7 +71,7 @@ function Category() {
             {loading ? (
                 <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des categories...</Typography>
             ) : (
-                <Box sx={{ maxWidth: '100%' }}>
+                <Box sx={{ maxWidth: '90%' }}>
                     <NewCategory newValue={{data}} handleDataChange={handleDataChange} />
                     <TableContainer sx={{ mt:4 }}>
                         <Table size="small">

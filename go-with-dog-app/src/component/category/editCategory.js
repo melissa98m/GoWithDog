@@ -1,10 +1,10 @@
-import {Box, Button, FormControl, Modal, Snackbar, TextField, Typography, Alert} from "@mui/material";
+import {Box, Button, FormControl, Modal, Snackbar, TextField, Typography, Alert , Grid} from "@mui/material";
 import {Edit} from "@mui/icons-material";
 import {useState} from "react";
 import update from "immutability-helper";
 import {useForm, Controller} from "react-hook-form";
 import axios from "axios";
-
+import CloseIcon from '@mui/icons-material/Close';
 
 
 function EditCategory(props) {
@@ -42,7 +42,7 @@ function EditCategory(props) {
     }
 
     return(<Box >
-          <Button color='secondary' variant='contained' sx={{mx: 2}}
+          <Button color='info' variant='contained' sx={{mx: 2}}
             onClick={() => {
                 setShowEdit(true)
                 setOneCategory({id: props.updateValue.id, category_name: props.updateValue.category_name})
@@ -50,14 +50,17 @@ function EditCategory(props) {
               <Edit/>
           </Button>
          <Modal
-            id="modal-category-container"
+            id="modal-crud-container"
             hideBackdrop
             open={editCategory}
             onClose={() => setShowEdit(false)}
             aria-labelledby="edit-category-title"
             aria-describedby="child-modal-description"
         >
-            <Box className="modal-category" sx={{bgcolor: 'background.default'}}>
+            <Box className="modal-crud modal-crud-ballade" sx={{bgcolor: 'background.default'}}>
+            <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
+            <Button variant="outlined"  color="secondary" onClick={() => setShowEdit(false)}><CloseIcon /></Button>
+            </Grid>
                 <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="edit-category-title">Editer une categorie</Typography>
                 <form onSubmit={handleSubmit(editCategoryForm)}>
                     <FormControl>
@@ -85,7 +88,6 @@ function EditCategory(props) {
                             ) : ''}
                         <Box className="action-button">
                             <Button type="submit" sx={{m: 3}} variant="contained">Envoyer</Button>
-                            <Button variant="outlined" onClick={() => setShowEdit(false)}>Fermer</Button>
                         </Box>
                     </FormControl>
                 </form>

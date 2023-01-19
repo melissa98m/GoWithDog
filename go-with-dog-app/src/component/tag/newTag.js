@@ -1,8 +1,10 @@
-import {Box, Button, FormControl, Modal, Snackbar, TextField, Typography, Alert, Input} from "@mui/material";
+import {Box, Button, FormControl, Modal, Snackbar, TextField, Typography, Alert, Input , Grid} from "@mui/material";
 import {useState} from "react";
 import update from "immutability-helper";
 import {useForm, Controller} from "react-hook-form";
 import axios from "axios";
+import CloseIcon from '@mui/icons-material/Close';
+
 function NewTag(props) {
 
     const [id, setID] = useState("");
@@ -50,6 +52,9 @@ function NewTag(props) {
             aria-describedby="child-modal-description"
         >
             <Box className="modal-crud modal-crud-tag" sx={{bgcolor: 'background.default'}}>
+             <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
+               <Button variant="outlined"  color="secondary" onClick={() => setShowNew(false)}><CloseIcon /></Button>
+              </Grid>
                 <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="new-tag-title">Nouveau tag de lieux</Typography>
                 <form onSubmit={handleSubmit(newTagForm)} className="tagForm">
                     <FormControl>
@@ -82,7 +87,6 @@ function NewTag(props) {
                              value={color} onChange={(e) => setColor(e.target.value)} label="Couleur"/>
                         <Box className="action-button">
                             <Button type="submit" sx={{m: 3}} variant="contained">Envoyer</Button>
-                            <Button variant="outlined" onClick={() => setShowNew(false)}>Fermer</Button>
                         </Box>
                     </FormControl>
                 </form>

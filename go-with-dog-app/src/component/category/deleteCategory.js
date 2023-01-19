@@ -1,8 +1,9 @@
-import {Box, Button, FormControl, Modal, Snackbar, Typography, Alert} from "@mui/material";
+import {Box, Button, FormControl, Modal, Snackbar, Typography, Alert , Grid} from "@mui/material";
 import {useEffect, useState} from "react";
 import update from "immutability-helper";
 import {DeleteForeverRounded} from "@mui/icons-material";
 import axios from "axios";
+import CloseIcon from '@mui/icons-material/Close';
 
 function DeleteCategory(props) {
 
@@ -42,23 +43,24 @@ function DeleteCategory(props) {
                 <DeleteForeverRounded/>
             </Button>
             <Modal
-                id="modal-brand-container"
+                id="modal-crud-container"
                 hideBackdrop
                 open={delCategory}
                 onClose={() => setShowDelete(false)}
                 aria-labelledby="delete-brand-title"
                 aria-describedby="child-modal-description"
             >
-                <Box className="modal-brand" sx={{bgcolor: 'background.default'}}>
-                    <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="delete-brand-title">Supprimer un Marque de
-                        vin</Typography>
+                <Box className="modal-crud modal-crud-ballade" sx={{bgcolor: 'background.default'}}>
+                <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
+                 <Button variant="outlined"  color="secondary" onClick={() => setShowDelete(false)}><CloseIcon /></Button>
+                 </Grid>
+                    <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="delete-brand-title">Supprimer une categorie</Typography>
                     <FormControl>
                         <Box>
-                            êtes vous sur de vouloir supprimer la marque : {oneCategory.category_name}?
+                            êtes vous sur de vouloir supprimer: {oneCategory.category_name}?
                         </Box>
                         <Box className="action-button">
-                            <Button sx={{m: 3}} type="submit" variant="contained" onClick={deleteCategory}>Envoyer</Button>
-                            <Button variant="outlined" onClick={() => setShowDelete(false)}>Fermer</Button>
+                            <Button sx={{m: 3}} type="submit" variant="contained" onClick={deleteCategory}>Supprimer</Button>
                         </Box>
                     </FormControl>
                 </Box>
