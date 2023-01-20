@@ -55,8 +55,8 @@ function Places() {
     let newAddress  ;
 
        if(auth.loggedAndUser() || auth.loggedAndAdmin()) {
-         btn = <NewPlace newValue={{data}} handleDataChange={handleDataChange} /> ;
-         newAddress =  <NewAddress newValue={{data}} handleDataChange={handleDataChange} />
+         btn =<Typography sx={{ marginRight: "10px" }}>Créer un lieu : <NewPlace newValue={{data}} handleDataChange={handleDataChange} />  </Typography>;
+         newAddress =  <Typography>Créer une adresse : <NewAddress newValue={{data}} handleDataChange={handleDataChange} /> </Typography>
         }
 
 
@@ -68,8 +68,8 @@ function Places() {
             ) : (
                 <Box sx={{ maxWidth: '90%' }}>
                <Box sx={{ display: 'flex'}}>
-                <Typography sx={{ marginRight: "10px" }}>Créer un lieu :{btn} </Typography>
-                 <Typography>Créer une adresse : {newAddress}</Typography>
+                {btn}
+                {newAddress}
                 </Box>
                                 {data.map(({id, place_name, place_description , place_image, category, address}) => {
                                     return (
