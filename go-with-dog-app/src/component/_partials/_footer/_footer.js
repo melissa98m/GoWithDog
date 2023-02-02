@@ -24,10 +24,10 @@ export function Footer() {
                        <Link href="/home" color="#000000" underline="none" className="footer-link">Accueil</Link>
                     </ListItemText>
                     <ListItemText>
-                       <Link href="/home" color="#000000" underline="none" className="footer-link">Toutes les ballades</Link>
+                       <Link href="/ballades" color="#000000" underline="none" className="footer-link">Toutes les ballades</Link>
                   </ListItemText>
                   <ListItemText>
-                       <Link href="/home" color="#000000" underline="none" className="footer-link">Tout les lieux</Link>
+                       <Link href="/places" color="#000000" underline="none" className="footer-link">Tout les lieux</Link>
                   </ListItemText>
                   </List>
                </Grid>
@@ -40,7 +40,7 @@ export function Footer() {
                 <Link href="/mentions-legales" color="#000000" underline="none" className="footer-link">Mentions légales</Link>
                  </ListItemText>
                    <ListItemText>
-                   <Link href="/home" color="#000000" underline="none" className="footer-link">Politique de confidentialité</Link>
+                   <Link href="/politique-confidentialite" color="#000000" underline="none" className="footer-link">Politique de confidentialité</Link>
                    </ListItemText>
                     </List>
                </Grid>

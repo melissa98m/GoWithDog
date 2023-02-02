@@ -29,7 +29,9 @@ import {Footer} from "./component/_partials/_footer/_footer";
 import Login from "./services/auth/login";
 import Logout from "./services/auth/logout";
 import Register from "./services/auth/register";
-import MentionsLegales from "./component/legal/mentionsLegales"
+import MentionsLegales from "./component/legal/mentionsLegales";
+import PolitiqueConfidentialite from "./component/legal/politiqueConfidentialite";
+
 import auth from "./services/auth/token"
 
 function CustomTheme() {
@@ -89,6 +91,7 @@ function CustomTheme() {
                     <Route exact path="dashboard" element={auth.loggedAndAdmin() ? <Dashboard/> : <Home adminMessage='unauthorizedRole'/> }>Dashboard</Route>
                     <Route exact path="contact" element={<Contact/>}>Contact</Route>
                     <Route exact path="mentions-legales" element={<MentionsLegales/>}>MentionsLegales</Route>
+                    <Route exact path="politique-confidentialite" element={<PolitiqueConfidentialite/>}>PolitiqueConfidentialite</Route>
                     <Route path="*" element={
                         <div>
                             <p>Il n'y a rien ici !</p>
