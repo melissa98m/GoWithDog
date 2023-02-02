@@ -1,23 +1,6 @@
 import React, {useEffect, useState} from "react";
-import { Box, CardHeader, Container, Card, TableContainer, Table, TablePagination } from "@mui/material";
-import axios from "axios";
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import LoupeIcon from '@mui/icons-material/Loupe';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import AdminMessage from "../../services/auth/adminMessage";
-import Grid from '@mui/material/Grid';
-import Presentation from "../../assets/presentation.jpg";
+import { Box, Container, Typography} from "@mui/material";
 
-
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import { Icon } from 'leaflet'
-import marker from "../../assets/icon.svg";
-import DisplayBallade from "../ballade/displayBallade";
 
 
 function MentionsLegales() {

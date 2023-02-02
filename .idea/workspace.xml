@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5690b17a-d70f-4033-beae-c04b995f1571" name="Changes" comment="React: ajout fichiers divers">
-      <change beforePath="$PROJECT_DIR$/go-with-dog-api/app/Http/Controllers/API/BalladeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-api/app/Http/Controllers/API/BalladeController.php" afterDir="false" />
+    <list default="true" id="5690b17a-d70f-4033-beae-c04b995f1571" name="Changes" comment="meta seo">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/assets/css/component/_partials/_theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/assets/css/component/_partials/_theme.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_navbar/_navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_navbar/_navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/home/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/legal/mentionsLegales.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/legal/mentionsLegales.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +235,12 @@
       <workItem from="1670584854750" duration="608000" />
       <workItem from="1673514567578" duration="32000" />
       <workItem from="1673525037965" duration="7000" />
-      <workItem from="1674112010558" duration="27357000" />
+      <workItem from="1674112010558" duration="28281000" />
+      <workItem from="1674198332355" duration="12863000" />
+      <workItem from="1674317031583" duration="462000" />
+      <workItem from="1675256247148" duration="595000" />
+      <workItem from="1675321980537" duration="5290000" />
+      <workItem from="1675342758462" duration="948000" />
     </task>
     <task id="LOCAL-00001" summary="add authController">
       <created>1666338638317</created>
@@ -381,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668781736008</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="affichagge condition place client">
+      <created>1674214190721</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1674214190721</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,6 +444,8 @@
     <MESSAGE value="React: crud category" />
     <MESSAGE value="React: tag" />
     <MESSAGE value="React: ajout fichiers divers" />
-    <option name="LAST_COMMIT_MESSAGE" value="React: ajout fichiers divers" />
+    <MESSAGE value="affichagge condition place client" />
+    <MESSAGE value="meta seo" />
+    <option name="LAST_COMMIT_MESSAGE" value="meta seo" />
   </component>
 </project>
