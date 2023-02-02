@@ -37,7 +37,7 @@ export function Footer() {
                <Link href="/contact" color="#000000" underline="none" className="footer-link">Contact</Link>
                 </ListItemText>
                 <ListItemText>
-                <Link href="/home" color="#000000" underline="none" className="footer-link">Mentions légales</Link>
+                <Link href="/mentions-legales" color="#000000" underline="none" className="footer-link">Mentions légales</Link>
                  </ListItemText>
                    <ListItemText>
                    <Link href="/home" color="#000000" underline="none" className="footer-link">Politique de confidentialité</Link>

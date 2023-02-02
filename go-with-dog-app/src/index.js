@@ -10,7 +10,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {lightTheme} from "./component/_partials/_theme/_lightTheme";
 import {darkTheme} from "./component/_partials/_theme/_darkTheme";
 import {ColorContext, setThemeToStorage} from "./component/_partials/_theme/_colorContext";
-import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
+import {createTheme, CssBaseline, ThemeProvider , Button} from "@mui/material";
 
 import App from './App';
 import Home from "./component/home/home";
@@ -29,6 +29,7 @@ import {Footer} from "./component/_partials/_footer/_footer";
 import Login from "./services/auth/login";
 import Logout from "./services/auth/logout";
 import Register from "./services/auth/register";
+import MentionsLegales from "./component/legal/mentionsLegales"
 import auth from "./services/auth/token"
 
 function CustomTheme() {
@@ -61,6 +62,15 @@ function CustomTheme() {
         <ThemeProvider theme={theme}>
             <CssBaseline enableColorScheme/>
             <Navbar/>
+             <Button id="back"
+             variant="outlined"  color="secondary"
+
+                              onClick={() => {
+                                window.history.back();
+                              }}
+                            >
+                             Retour
+                            </Button>
             <App/>
             <BrowserRouter>
                 <Routes>
@@ -78,6 +88,7 @@ function CustomTheme() {
                     <Route exact path="user" element={auth.loggedAndAdmin() ? <User/> : <Home adminMessage='unauthorizedRole'/> }>User</Route>
                     <Route exact path="dashboard" element={auth.loggedAndAdmin() ? <Dashboard/> : <Home adminMessage='unauthorizedRole'/> }>Dashboard</Route>
                     <Route exact path="contact" element={<Contact/>}>Contact</Route>
+                    <Route exact path="mentions-legales" element={<MentionsLegales/>}>MentionsLegales</Route>
                     <Route path="*" element={
                         <div>
                             <p>Il n'y a rien ici !</p>
