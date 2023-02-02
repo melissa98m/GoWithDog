@@ -61,8 +61,8 @@ function Home() {
         }
 
     return <Container maxWidth="xl" id='home'>
-     <Typography variant="h4" sx={{textAlign: "left" , marginTop: "15px"}} gutterBottom>Bienvenue sur go with dog!</Typography>
-        <Typography variant="h5" sx={{textAlign: "center" , marginTop: "35px"}} gutterBottom>Dernières ballades ajoutées</Typography>
+     <Typography variant="h1" sx={{textAlign: "left" , marginTop: "15px" , fontSize: "14px"}} gutterBottom>Bienvenue sur go with dog! Le site qui réferencie les adresses dogfriendly</Typography>
+        <Typography variant="h2" sx={{textAlign: "center" , marginTop: "35px"}} gutterBottom>Dernières ballades ajoutées</Typography>
         {loading ? (
             <Typography variant="body" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>
         ) : (
@@ -80,7 +80,7 @@ function Home() {
                         alt={ballade_name}
                     />
                     <CardContent>
-                        <Typography gutterBottom variant="body1" component="div" color={tag.color}>
+                        <Typography gutterBottom variant="body2" component="div" color={tag.color}>
                             {tag.tag_name}
                         </Typography>
                         <Typography variant="body2">
@@ -112,7 +112,7 @@ function Home() {
                    backgroundColor: "#B1B3C1" , borderRadius: "10px" , marginBottom: "10px" , padding : "10px"}}>
            <Grid container >
            <Grid item xs={8} sx={{ paddingLeft: "10px"}}>
-            <Typography variant="h5" sx={{textAlign: "left" , marginBottom: "25px" }} >
+            <Typography variant="h3" sx={{textAlign: "left" , marginBottom: "25px" }} >
              Qui sommes nous?</Typography>
              <Typography variant="body" sx={{textAlign: "left" , marginBottom: "55px" }} >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna mi, placerat non pellentesque nec, luctus id tellus.
@@ -129,7 +129,7 @@ function Home() {
           </Grid>
 </Box>
 
-  <Typography variant="h5" sx={{textAlign: "left" , marginTop: "35px"}} gutterBottom>Tout les lieux</Typography>
+  <Typography variant="h4" sx={{textAlign: "left" , marginTop: "35px"}} gutterBottom>Tout les lieux</Typography>
   {loading ? (
    <Typography variant="body" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>
           ) : (
