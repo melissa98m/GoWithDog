@@ -23,6 +23,17 @@ class PlaceController extends Controller
             'data' => $places
         ]);
     }
+    public function byUser()
+    {
+        $userId = Auth::id();
+        $places = Place::with(['user', 'category' , 'address'])
+            ->where('user', '=', $userId)
+            ->get();
+        return response()->json([
+            'status' => 'Success',
+            'data' => $places,
+        ]);
+    }
 
 
     /**
