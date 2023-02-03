@@ -24,6 +24,7 @@ function Account() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [places , setPlaces] = useState([]);
+    const [ballades , setBallades] = useState([]);
     const [data, setData] = useState(null);
 
 
@@ -56,6 +57,13 @@ function Account() {
             setPlaces(actualData.data.data)
             })
             }
+
+      let getBallades = async () => {
+                await axios.get("http://127.0.0.1:8000/api/ballades-user" ,
+                {"headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') } }).then((actualData) => {
+                setPlaces(actualData.data.data)
+                })
+                }
 
     return <Container maxWidth="xl" id='home'>
 
@@ -108,6 +116,42 @@ function Account() {
 
                 )
                 }
+                <Typography variant="h4" sx={{textAlign: "left"}} >Ballades que vous avez créée</Typography>
+                        {loading ? (
+                                    <Typography variant="body" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>
+                                ) : (
+                                    <Box sx={{ maxWidth: '100%' }}>
+                                                {places.map(({id, place_name, place_description , place_image, category, address}) => {
+                                        return (
+                                       <Card sx={{ display: 'inline-block' }}>
+                                                            <CardMedia
+                                                                component="img"
+                                                                height="140"
+                                                                src={`http://127.0.0.1:8000/storage/uploads/places/${place_image}`}
+                                                                alt={place_name}
+                                                            />
+                                                            <CardContent>
+                                                                <Typography gutterBottom variant="h5" component="div">
+                                                                    {place_name}
+                                                                </Typography>
+                                                                <Typography variant="body2" color="text.secondary">
+                                                                    {place_description.slice(0,30)}
+                                                                </Typography>
+                                                            </CardContent>
+                                                              <CardActions>
+                                                                    <Box sx={{display: 'flex', justifyContent: 'right'}}>
+                                                                        <DisplayPlace DisplayPlaceValue={{id, place_name, place_description, place_image, category, address, data}} handleDataChange={handleDataChange} />
+                                                                    </Box>
+                                                                </CardActions>
+                                                        </Card>
+
+                                    )
+                                })}
+                                    </Box>
+
+
+                                )
+                                }
 
 </Container>
 
