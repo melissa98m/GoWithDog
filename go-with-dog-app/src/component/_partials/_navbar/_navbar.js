@@ -53,13 +53,11 @@ const filterPlaces = (query, place) => {
                       <Button color="secondary" href='/places'>Places</Button>
                        <Button color="secondary" href='/ballades'>Ballades</Button>
                     {auth.loggedAndAdmin() ? (
-
                             <Button color="secondary" href='/dashboard'>Dashboard</Button>
-
                     ) : null }
                     <Button color="secondary" href='/contact'>Contact</Button>
                     {auth.loggedAndUser() || auth.loggedAndAdmin() ? (
-                         <Button color="secondary" href='mon-compte'><AccountCircleOutlinedIcon /></Button>
+                         <Button color="secondary" href='/mon-compte'><AccountCircleOutlinedIcon /></Button>
                            ) : null }
                     <LogginButton/>
                     <SwitchModeButton/>
