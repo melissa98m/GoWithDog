@@ -29,6 +29,7 @@ import {Footer} from "./component/_partials/_footer/_footer";
 import Login from "./services/auth/login";
 import Logout from "./services/auth/logout";
 import Register from "./services/auth/register";
+import Account from "./component/account/account";
 import MentionsLegales from "./component/legal/mentionsLegales";
 import PolitiqueConfidentialite from "./component/legal/politiqueConfidentialite";
 
@@ -65,8 +66,7 @@ function CustomTheme() {
             <CssBaseline enableColorScheme/>
             <Navbar/>
              <Button id="back"
-             variant="outlined"  color="secondary"
-
+             variant="outlined" color="secondary"
                               onClick={() => {
                                 window.history.back();
                               }}
@@ -89,14 +89,23 @@ function CustomTheme() {
                     <Route exact path="tag" element={auth.loggedAndAdmin() ? <Tag/> : <Home adminMessage='unauthorizedRole'/> }>Tag</Route>
                     <Route exact path="user" element={auth.loggedAndAdmin() ? <User/> : <Home adminMessage='unauthorizedRole'/> }>User</Route>
                     <Route exact path="dashboard" element={auth.loggedAndAdmin() ? <Dashboard/> : <Home adminMessage='unauthorizedRole'/> }>Dashboard</Route>
+                    <Route exact path="mon-compte" element={auth.loggedAndUser() || auth.loggedAndAdmin() ? <Account/> : <Home adminMessage='Non connecté'/> }>Account</Route>
                     <Route exact path="contact" element={<Contact/>}>Contact</Route>
                     <Route exact path="mentions-legales" element={<MentionsLegales/>}>MentionsLegales</Route>
                     <Route exact path="politique-confidentialite" element={<PolitiqueConfidentialite/>}>PolitiqueConfidentialite</Route>
                     <Route path="*" element={
-                        <div>
-                            <p>Il n'y a rien ici !</p>
-                            <p>:'(</p>
+                           <div class="container">
+                            <div class="boo-wrapper">
+                                <div class="boo">
+                                <div class="face"></div>
+                                </div>
+                            <div class="shadow"></div>
+                            <h1>Oops!</h1>
+                             <p>La page demandée n'a pas été trouvée <br/></p>
+                             <Button variant="outlined" color="secondary" sx={{ textAlign: "center"}}href="/">Retourner sur l'accueil</Button>
+                         </div>
                         </div>
+
                     }/>
                 </Routes>
             </BrowserRouter>
