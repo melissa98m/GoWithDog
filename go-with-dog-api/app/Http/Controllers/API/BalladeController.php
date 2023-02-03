@@ -23,6 +23,18 @@ class BalladeController extends Controller
             'data' => $ballades
         ]);
     }
+
+    public function byUser()
+    {
+        $userId = Auth::id();
+        $ballades = Ballade::with(['user', 'tag'])
+            ->where('user', '=', $userId)
+            ->get();
+        return response()->json([
+            'status' => 'Success',
+            'data' => $ballades,
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *

@@ -39,6 +39,7 @@ Route::controller(AddressController::class)->group(function () {
 });
 Route::controller(BalladeController::class)->group(function () {
     Route::get('ballades', 'index');
+    Route::get('ballades-user', 'byUser')->middleware('auth:api');
     Route::get('ballades/{ballade}', 'show');
     Route::get('ballades/sortDateDesc', 'sortByDateDesc');
     Route::post('ballades', 'store')->middleware('auth:api');
