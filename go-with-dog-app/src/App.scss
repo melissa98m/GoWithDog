@@ -27,17 +27,18 @@
 $bgColor: #eae5e5;
 $jaggedDistance: 32px;
 
-// boo
+// fantome
 $booSize: $jaggedDistance * 5;
 $booBg: $bgColor;
 $booShadow: darken($booBg, 5%);
 
-// face
+// visage fantome
 $booFaceSize: round($jaggedDistance / 1.3333);
 $booFaceColor: #9b9b9b;
 
 // ===========
 
+//flottement
 @keyframes floating {
   0% {
     transform: translate3d(0, 0, 0);
@@ -53,6 +54,7 @@ $booFaceColor: #9b9b9b;
   }
 }
 
+//flotement ombre
 @keyframes floatingShadow {
   0% {
     transform: scale(1);
@@ -121,7 +123,7 @@ body {
   paddig-top: $jaggedDistance * 2;
   paddig-bottom: $jaggedDistance * 2;
 }
-
+//style fantome
 .boo {
   width: $booSize;
   height: $booSize + ($booSize * .15);
@@ -136,6 +138,7 @@ body {
   @include border-bottom-jagged($jaggedDistance, $bgColor);
   animation: floating 3s ease-in-out infinite;
 
+  //style visage fantome
   .face {
     width: $booFaceSize;
     height: $jaggedDistance / 10;
@@ -167,7 +170,7 @@ body {
     }
   }
 }
-
+// ombre
 .shadow {
   width: $booSize - $jaggedDistance;
   height: $jaggedDistance / 2;

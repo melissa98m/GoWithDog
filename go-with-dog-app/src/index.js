@@ -95,12 +95,13 @@ function CustomTheme() {
                     <Route exact path="politique-confidentialite" element={<PolitiqueConfidentialite/>}>PolitiqueConfidentialite</Route>
                     <Route path="*" element={
                            <div class="container">
+                           <h1>Erreur 404</h1>
                             <div class="boo-wrapper">
                                 <div class="boo">
                                 <div class="face"></div>
                                 </div>
                             <div class="shadow"></div>
-                            <h1>Oops!</h1>
+                            <h2>Oops!</h2>
                              <p>La page demandée n'a pas été trouvée <br/></p>
                              <Button variant="outlined" color="secondary" sx={{ textAlign: "center"}}href="/">Retourner sur l'accueil</Button>
                          </div>
