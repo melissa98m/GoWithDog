@@ -3,7 +3,7 @@ import {
     Box,
     Container,
     Typography,
-    Card, CardMedia, CardContent, CardActions
+    Card, CardMedia, CardContent, CardActions , MenuItem , Select ,InputLabel
 } from "@mui/material";
 
 import axios from "axios";
@@ -30,6 +30,8 @@ function Ballades() {
          iconUrl: marker,
          iconSize: [32,32]
         })
+     const [selectedDifficulty, setSelectedDifficulty] = useState(null);
+
 
 
 
@@ -47,6 +49,7 @@ function Ballades() {
         });
     }, []);
 
+
     const handleDataChange = async (dataChange) => {
         await setData(dataChange)
     }
@@ -54,16 +57,36 @@ function Ballades() {
     if(auth.loggedAndUser() || auth.loggedAndAdmin()) {
      btn = <NewBallade newValue={{data}} handleDataChange={handleDataChange} />
     }
+  const filteredData = data?.filter((data) => {
+    if (selectedDifficulty) {
+      return data.tag.tag_name === selectedDifficulty;
+    } else {
+      return true;
+    }
+  }) ?? [];
+
 
     return <Container maxWidth="xl" id="ballade">
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Toutes les ballades</Typography>
+             <InputLabel>Trier par tags</InputLabel>
+             <Select value={selectedDifficulty}
+             onChange={(e) => setSelectedDifficulty(e.target.value)}
+             label="Trier par tags"
+             >
+              <MenuItem value={null} label="Tous">Tous </MenuItem>
+               <MenuItem value="Facile">Facile</MenuItem>
+               <MenuItem value="Moyen">Moyen</MenuItem>
+               <MenuItem value="Difficile">Difficile</MenuItem>
+                </Select>
             {loading ? (
                 <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>
             ) : (
+
                 <Box sx={{ maxWidth: '90%' }}>
                  {btn}
-                                {data.map(({id, ballade_name, ballade_description , ballade_image, tag, ballade_latitude , ballade_longitude , denivele , distance}) => {
+                                {filteredData.map(({id, ballade_name, ballade_description , ballade_image, tag, ballade_latitude , ballade_longitude , denivele , distance}) => {
                                     return (
+
 
                                         <Card sx={{ maxWidth: 500 , display: 'inline-block' , margin: 3 , height: '500px'}} key={id}>
                                             <CardMedia
