@@ -1,4 +1,4 @@
-import {AppBar, Box, Button} from "@mui/material";
+import {AppBar, Box, Button , useTheme, useMediaQuery, Typography} from "@mui/material";
 import {SwitchModeButton} from "../_theme/_switchModeButton";
 import {useEffect} from "react";
 import '../../../assets/css/component/_partials/_navbar.scss';
@@ -9,12 +9,15 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import Search from "../../search/search";
 import Places from "../../place/places";
 import React, {useState} from "react";
+import DrawerComponent from "./Drawer";
 
 
 export function Navbar() {
 
 const [places , setPlaces] = useState([]);
 const [searchTerm, setSearchTerm] = useState("");
+const theme = useTheme();
+const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
     useEffect(() => {
     }, [])
@@ -33,6 +36,7 @@ const filterPlaces = (query, place) => {
 };
 
     return (
+
         <Box sx={{flexGrow: 1}}>
             <AppBar className='header' id="navbar">
             <Box
@@ -43,12 +47,16 @@ const filterPlaces = (query, place) => {
                         alt="Your logo."
                         src={Logo}
                         id= "logo"
-                    />
-                <Box sx={{m: 4, flexGrow: 1}} component="div" color="secondary" id="title">{document.title}</Box>
-                <Box id="search-box">
-                     <Search searchHandler={handleSearch} />
-                 </Box>
-                <Box className="navbar">
+                ></Box>
+                {isMobile ? null : (
+                 <Box sx={{m: 4, flexGrow: 1}} component="div" color="secondary" id="title">{document.title}</Box>
+                )}
+                 {isMobile ? (
+                     <DrawerComponent />
+                     ) : (
+                <Box sx={{display: 'flex' , justifyContent: 'flex-end'}}>
+
+                   <Box className="navbar">
                     <Button color="secondary" href='/'>Accueil</Button>
                       <Button color="secondary" href='/places'>Places</Button>
                        <Button color="secondary" href='/ballades'>Ballades</Button>
@@ -59,9 +67,20 @@ const filterPlaces = (query, place) => {
                     {auth.loggedAndUser() || auth.loggedAndAdmin() ? (
                          <Button color="secondary" href='/mon-compte'><AccountCircleOutlinedIcon /></Button>
                            ) : null }
-                    <LogginButton/>
-                    <SwitchModeButton/>
                 </Box>
+                </Box>
+)}
+                           {isMobile ? (
+                           <Box sx={{display: 'flex' , justifyContent: 'flex-end' , flexGrow: 3 }}  >
+                           <LogginButton/>
+                            <SwitchModeButton/>
+                            </Box>
+                           ) : ( <Box sx={{display: 'flex' , justifyContent: 'flex-end'  }}  >
+                           <LogginButton/>
+                           <SwitchModeButton/>
+                            </Box>
+                           )}
+
             </AppBar>
 
         </Box>
