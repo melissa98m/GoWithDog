@@ -37,7 +37,6 @@ function Ballades() {
         axios.get('http://127.0.0.1:8000/api/ballades').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
-            console.log(actualData)
             setData(actualData.data);
             setError(null);
         }).catch((err) => {
@@ -66,7 +65,7 @@ function Ballades() {
                                 {data.map(({id, ballade_name, ballade_description , ballade_image, tag, ballade_latitude , ballade_longitude , denivele , distance}) => {
                                     return (
 
-                                        <Card sx={{ maxWidth: 500 , display: 'inline-block' , margin: 3 , height: '500px'}}>
+                                        <Card sx={{ maxWidth: 500 , display: 'inline-block' , margin: 3 , height: '500px'}} key={id}>
                                             <CardMedia
                                                 component="img"
                                                 height="140"

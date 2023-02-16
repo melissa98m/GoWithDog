@@ -37,7 +37,6 @@ function Places() {
         axios.get('http://127.0.0.1:8000/api/places').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
-            console.log(actualData)
             setData(actualData.data);
             setError(null);
         }).catch((err) => {
@@ -74,7 +73,7 @@ function Places() {
                                 {data.map(({id, place_name, place_description , place_image, category, address}) => {
                                     return (
 
-                                        <Card sx={{ maxWidth: 500 , display: 'inline-block' , margin: 3 , height: '500px'}}>
+                                        <Card sx={{ maxWidth: 500 , display: 'inline-block' , margin: 3 , height: '500px'}} key={id}>
                                             <CardMedia
                                                 component="img"
                                                 height="140"

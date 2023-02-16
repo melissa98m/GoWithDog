@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5690b17a-d70f-4033-beae-c04b995f1571" name="Changes" comment="meta seo">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="5690b17a-d70f-4033-beae-c04b995f1571" name="Changes" comment="page mon compte : ballade by current user done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/assets/css/component/_partials/_theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/assets/css/component/_partials/_theme.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_navbar/_navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_navbar/_navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_theme/_lightTheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_theme/_lightTheme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/ballade/ballades.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/ballade/ballades.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/home/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/legal/mentionsLegales.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/legal/mentionsLegales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/place/displayPlace.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/place/displayPlace.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/place/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/place/places.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/services/auth/logginButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/services/auth/logginButton.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,6 +239,12 @@
       <workItem from="1675256247148" duration="595000" />
       <workItem from="1675321980537" duration="5290000" />
       <workItem from="1675342758462" duration="948000" />
+      <workItem from="1675351952368" duration="437000" />
+      <workItem from="1675408088931" duration="12605000" />
+      <workItem from="1675433581332" duration="4963000" />
+      <workItem from="1676532580562" duration="1343000" />
+      <workItem from="1676535404820" duration="743000" />
+      <workItem from="1676536168866" duration="7753000" />
     </task>
     <task id="LOCAL-00001" summary="add authController">
       <created>1666338638317</created>
@@ -403,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674214190721</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="page mon compte : ballade by current user done">
+      <created>1675434730881</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1675434730881</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,6 +457,7 @@
     <MESSAGE value="React: ajout fichiers divers" />
     <MESSAGE value="affichagge condition place client" />
     <MESSAGE value="meta seo" />
-    <option name="LAST_COMMIT_MESSAGE" value="meta seo" />
+    <MESSAGE value="page mon compte : ballade by current user done" />
+    <option name="LAST_COMMIT_MESSAGE" value="page mon compte : ballade by current user done" />
   </component>
 </project>

@@ -6,6 +6,7 @@ import './index.css';
 import './assets/css/component/_partials/_theme.scss';
 
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {useTheme, useMediaQuery} from "@mui/material";
 
 import {lightTheme} from "./component/_partials/_theme/_lightTheme";
 import {darkTheme} from "./component/_partials/_theme/_darkTheme";
@@ -53,6 +54,8 @@ function CustomTheme() {
         () => createTheme(mode === "light" ? lightTheme : darkTheme),
         [mode]
     );
+    const ecran = useTheme();
+    const isMobile = useMediaQuery(ecran.breakpoints.down("sm"));
 
     useEffect(() => {
         // rend le thème persistant après reload
@@ -65,6 +68,7 @@ function CustomTheme() {
         <ThemeProvider theme={theme}>
             <CssBaseline enableColorScheme/>
             <Navbar/>
+            {isMobile ? null : (
              <Button id="back"
              variant="outlined" color="secondary"
                               onClick={() => {
@@ -73,6 +77,7 @@ function CustomTheme() {
                             >
                              Retour
                             </Button>
+             )}
             <App/>
             <BrowserRouter>
                 <Routes>

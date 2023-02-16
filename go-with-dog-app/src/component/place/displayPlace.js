@@ -70,7 +70,7 @@ function DisplayPlace(place) {
                     </Box>
                     <Box sx={{ marginTop: 3 }}>
                         Adresse du lieu: {address.address}
-                        <Typography variant="body">{address.postal_code}-{address.city}</Typography>
+                        <Typography variant="body"> ~{address.postal_code} {address.city}</Typography>
                     </Box>
                 </Box>
 

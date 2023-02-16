@@ -95,7 +95,7 @@ function Home() {
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Box sx={{display: 'flex', justifyContent: 'right'}}>
+                        <Box sx={{display: 'flex', textAlign: 'center', marginRight: "auto", marginLeft: "auto"}}>
                         <DisplayBallade DisplayBalladeValue={{id, ballade_name, ballade_description, ballade_image, tag,  ballade_latitude , ballade_longitude,denivele , distance ,  data}} handleDataChange={handleDataChange} />
                          </Box>
                     </CardActions>
@@ -133,8 +133,8 @@ function Home() {
   {loading ? (
    <Typography variant="body" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>
           ) : (
-          <Box sx={{ maxWidth: '90%' , marginBottom: "150px" }}>
-          <MapContainer center={[45.183567840163185, 5.718114920600324]} zoom={9} scrollWheelZoom={true} sx={{ marginLeft: '30px' , marginRight:"auto" , textAlign: "center"}}>
+          <Box sx={{ maxWidth: '90%' , marginBottom: "150px" ,marginRight: 'auto' , marginLeft: 'auto'}}>
+          <MapContainer center={[45.183567840163185, 5.718114920600324]} zoom={9} scrollWheelZoom={true} sx={{  textAlign: "center"}}>
             <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
                                   {places.map(({id, place_name, address , category}) => {

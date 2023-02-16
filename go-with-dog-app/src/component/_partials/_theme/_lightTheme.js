@@ -26,7 +26,7 @@ export const lightTheme = {
             contrastText: '#000000',
         },
         secondary: {
-            main: '#000000',
+            main: '#2d2d2d',
             light: 'rgb(246, 216, 221)',
             dark: 'rgb(170, 144, 149)',
             contrastText: 'rgba(0, 0, 0, 0.87)',
@@ -75,6 +75,7 @@ export const lightTheme = {
         background: {
             default: '#E1E1E1',
             paper: '#7BABD8',
+            drawer: '#E1E1E1',
         },
         text: {
             primary: 'rgba(0,0,0,0.87)',
@@ -110,6 +111,13 @@ export const lightTheme = {
                     }
                 }
             }
-        }
+        },
+        MuiDrawer: {
+            styleOverrides: {
+                paper: {
+                    backgroundColor: '#E1E1E1',
+                }
+            }
+        },
     }
 };
