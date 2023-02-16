@@ -3,7 +3,7 @@ import {
     Box,
     Container,
     Typography,
-    Card, CardMedia, CardContent, CardActions
+    Card, CardMedia, CardContent, CardActions , Select , MenuItem , InputLabel
 } from "@mui/material";
 
 import axios from "axios";
@@ -30,6 +30,7 @@ function Places() {
          iconUrl: marker,
          iconSize: [32,32]
         })
+     const [selectedCategory, setSelectedCategory] = useState(null);
 
 
 
@@ -58,10 +59,30 @@ function Places() {
          newAddress =  <Typography>Créer une adresse : <NewAddress newValue={{data}} handleDataChange={handleDataChange} /> </Typography>
         }
 
+        const filteredData = data?.filter((data) => {
+            if (selectedCategory) {
+              return data.category.category_name === selectedCategory;
+            } else {
+              return true;
+            }
+          }) ?? [];
+
 
 
     return <Container maxWidth="xl" id="place">
+
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Tous les lieux</Typography>
+            <InputLabel>Trier par categorie</InputLabel>
+                             <Select value={selectedCategory}
+                             onChange={(e) => setSelectedCategory(e.target.value)}
+                             label="Trier par categorie"
+                             >
+                              <MenuItem value={null} label="Tous">Tous </MenuItem>
+                               <MenuItem value="Restaurant">Restaurant</MenuItem>
+                               <MenuItem value="Parc">Parc</MenuItem>
+                               <MenuItem value="Hebergement">Hebergement</MenuItem>
+                               <MenuItem value="Autre">Autre</MenuItem>
+                                </Select>
             {loading ? (
                 <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des lieux...</Typography>
             ) : (
@@ -70,7 +91,7 @@ function Places() {
                 {btn}
                 {newAddress}
                 </Box>
-                                {data.map(({id, place_name, place_description , place_image, category, address}) => {
+                                {filteredData.map(({id, place_name, place_description , place_image, category, address}) => {
                                     return (
 
                                         <Card sx={{ maxWidth: 500 , display: 'inline-block' , margin: 3 , height: '500px'}} key={id}>
