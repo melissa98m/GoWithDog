@@ -81,13 +81,13 @@ function Ballade() {
                                 <TableRow>
                                     <TableCell key={1}>ID</TableCell>
                                     <TableCell key={2}>Nom</TableCell>
-                                    <TableCell key={3}>Description</TableCell>
-                                    <TableCell key={4}>Image</TableCell>
-                                    <TableCell key={5}>Distance</TableCell>
-                                    <TableCell key={6}>Denivelé</TableCell>
-                                    <TableCell key={7}>Coordonnées</TableCell>
+                                    <TableCell sx={{ display: { sm: 'none', md: 'table-cell' } }} key={3}>Description</TableCell>
+                                    <TableCell sx={{ display: { sm: 'none', md: 'table-cell' } }} key={4}>Image</TableCell>
+                                    <TableCell sx={{ display: { sm: 'none', md: 'table-cell' } }} key={5}>Distance</TableCell>
+                                    <TableCell sx={{ display: { sm: 'none', md: 'table-cell' } }} key={6}>Denivelé</TableCell>
+                                    <TableCell sx={{ display: { sm: 'none', md: 'table-cell' } }} key={7}>Coordonnées</TableCell>
                                     <TableCell key={8}>Tag</TableCell>
-                                    <TableCell key={9}>Createur</TableCell>
+                                    <TableCell sx={{ display: { xs: 'none', md: 'table-cell' } }}  key={9}>Createur</TableCell>
                                     <TableCell key={10} align={'right'}>Actions</TableCell>
                                 </TableRow>
                             </TableHead>
@@ -97,19 +97,19 @@ function Ballade() {
                                         <TableRow hover role="checkbox" tabIndex={-1} key={ballade_name+id}>
                                             <TableCell>{id}</TableCell>
                                             <TableCell sx={{fontWeight: 'bold'}}>{ballade_name ?? '--'}</TableCell>
-                                            <TableCell sx={{fontWeight: 'bold'}}>{ballade_description.slice(0,30) ?? '--'}</TableCell>
-                                            <TableCell sx={{fontWeight: 'bold'}}>
+                                            <TableCell  sx={{fontWeight: 'bold' , display: { sm: 'none', md: 'table-cell' } }}>{ballade_description.slice(0,30) ?? '--'}</TableCell>
+                                            <TableCell sx={{fontWeight: 'bold' , display: { sm: 'none', md: 'table-cell' } }}>
                                                 { ballade_image ? (
                                                     <Box component="img" src={`http://127.0.0.1:8000/storage/uploads/ballades/${ballade_image}`} alt={ballade_image} sx={{ width: "80px" }}/>
                                                 ) : (
                                                     '--'
                                                 ) }
                                             </TableCell>
-                                             <TableCell sx={{fontWeight: 'bold'}}>{ distance ?? '--'}</TableCell>
-                                              <TableCell sx={{fontWeight: 'bold'}}>{ denivele ?? '--'}</TableCell>
-                                            <TableCell sx={{fontWeight: 'bold'}}>{ballade_latitude ?? '--'} , {ballade_longitude ?? '--'}</TableCell>
+                                             <TableCell sx={{fontWeight: 'bold' , display: { sm: 'none', md: 'table-cell' } }}>{ distance ?? '--'}</TableCell>
+                                              <TableCell sx={{fontWeight: 'bold' , display: { sm: 'none', md: 'table-cell' } }}>{ denivele ?? '--'}</TableCell>
+                                            <TableCell sx={{fontWeight: 'bold' , display: { sm: 'none', md: 'table-cell' } }}>{ballade_latitude ?? '--'} , {ballade_longitude ?? '--'}</TableCell>
                                             <TableCell sx={{fontWeight: 'bold'}} ><Typography  color={tag.color}>{tag.tag_name ?? '--'}</Typography></TableCell>
-                                             <TableCell>{user.username ?? '--'}</TableCell>
+                                             <TableCell sx={{  display: { sm: 'none', md: 'table-cell' } }}>{user.username ?? '--'}</TableCell>
                                             <TableCell>
                                                 <Box sx={{display: 'flex', justifyContent: 'right'}}>
                                                     <EditBallade updateValue={{id, ballade_name, ballade_description, ballade_image,tag, distance, denivele, ballade_latitude, ballade_longitude, data}} handleDataChange={handleDataChange} />
