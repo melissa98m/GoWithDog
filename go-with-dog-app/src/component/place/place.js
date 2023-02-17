@@ -81,11 +81,11 @@ function Place() {
                                 <TableRow>
                                     <TableCell key={1}>ID</TableCell>
                                     <TableCell key={2}>Nom</TableCell>
-                                    <TableCell key={3}>Description</TableCell>
-                                    <TableCell key={4}>Image</TableCell>
-                                    <TableCell key={5}>address</TableCell>
-                                    <TableCell key={6}>Tag</TableCell>
-                                    <TableCell key={7}>Createur</TableCell>
+                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={3}>Description</TableCell>
+                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={4}>Image</TableCell>
+                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={5}>address</TableCell>
+                                    <TableCell key={6}>Categorie</TableCell>
+                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={7}>Createur</TableCell>
                                     <TableCell key={8} align={'right'}>Actions</TableCell>
                                 </TableRow>
                             </TableHead>
@@ -95,17 +95,17 @@ function Place() {
                                         <TableRow hover role="checkbox" tabIndex={-1} key={place_name+id}>
                                             <TableCell>{id}</TableCell>
                                             <TableCell sx={{fontWeight: 'bold'}}>{place_name ?? '--'}</TableCell>
-                                            <TableCell sx={{fontWeight: 'bold'}}>{place_description.slice(0,30) ?? '--'}</TableCell>
-                                            <TableCell sx={{fontWeight: 'bold'}}>
+                                            <TableCell sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>{place_description.slice(0,30) ?? '--'}</TableCell>
+                                            <TableCell sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>
                                                 { place_image ? (
                                                     <Box component="img" src={`http://127.0.0.1:8000/storage/uploads/places/${place_image}`} alt={place_image} sx={{ width: "80px" }}/>
                                                 ) : (
                                                     '--'
                                                 ) }
                                             </TableCell>
-                                            <TableCell sx={{fontWeight: 'bold'}}>{address.address ?? '--'} {address.city ?? '--'} {address.postal_code ?? '--'}</TableCell>
+                                            <TableCell sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>{address.address ?? '--'} {address.city ?? '--'} {address.postal_code ?? '--'}</TableCell>
                                             <TableCell sx={{fontWeight: 'bold'}}>{category.category_name ?? '--'}</TableCell>
-                                             <TableCell>{user.username ?? '--'}</TableCell>
+                                             <TableCell sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>{user.username ?? '--'}</TableCell>
                                             <TableCell>
                                                 <Box sx={{display: 'flex', justifyContent: 'right'}}>
                                                     <EditPlace updateValue={{id, place_name, place_description, place_image, category, address, data}} handleDataChange={handleDataChange} />
