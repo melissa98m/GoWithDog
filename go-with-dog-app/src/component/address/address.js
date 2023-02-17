@@ -82,7 +82,7 @@ function Address() {
                                     <TableCell key={2}>Nom</TableCell>
                                     <TableCell key={3}>Ville</TableCell>
                                     <TableCell key={4}>Code postal</TableCell>
-                                    <TableCell key={5}>Coordonnées</TableCell>
+                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={5}>Coordonnées</TableCell>
                                     <TableCell key={6} align={'right'}>Actions</TableCell>
                                 </TableRow>
                             </TableHead>
@@ -94,7 +94,7 @@ function Address() {
                                             <TableCell sx={{fontWeight: 'bold'}}>{address ?? '--'}</TableCell>
                                             <TableCell>{city ?? '--'}</TableCell>
                                             <TableCell>{postal_code ?? '--'}</TableCell>
-                                            <TableCell>{latitude ?? '--'} , {longitude ?? '--'}</TableCell>
+                                            <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }}>{latitude ?? '--'} , {longitude ?? '--'}</TableCell>
                                             <TableCell>
                                                 <Box sx={{display: 'flex', justifyContent: 'right'}}>
                                                     <EditAddress updateValue={{id, address, city, postal_code, latitude, longitude , data}} handleDataChange={handleDataChange} />

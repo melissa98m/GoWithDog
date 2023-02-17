@@ -70,7 +70,7 @@ function User() {
 
     return <Container maxWidth="xl" id="user">
         <Paper sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', py: 10}}>
-            <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Utilisateur</Typography>
+            <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Utilisateurs</Typography>
             {loading ? (
                 <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des utilisateurs...</Typography>
             ) : (
@@ -82,7 +82,7 @@ function User() {
                                     <TableCell key={1}>ID</TableCell>
                                     <TableCell key={2}>Username</TableCell>
                                     <TableCell key={3}>Roles</TableCell>
-                                    <TableCell key={4}>Créer le</TableCell>
+                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={4}>Créer le</TableCell>
                                     <TableCell key={5} align={'right'}>Actions</TableCell>
                                 </TableRow>
                             </TableHead>
@@ -93,7 +93,7 @@ function User() {
                                             <TableCell>{id}</TableCell>
                                             <TableCell sx={{fontWeight: 'bold'}}>{username ?? '--'}</TableCell>
                                             <TableCell sx={{fontWeight: 'bold'}}>{ roles ?? '--'}</TableCell>
-                                             <TableCell sx={{fontWeight: 'bold'}}>{ created_at.slice(0, 16)  ?? '--'}</TableCell>
+                                             <TableCell sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>{ created_at.slice(0, 16)  ?? '--'}</TableCell>
                                             <TableCell>
                                                 <Box sx={{display: 'flex', justifyContent: 'right'}}>
                                                     <DeleteUser deleteValue={{id, username, roles, data}} handleDataChange={handleDataChange}/>
