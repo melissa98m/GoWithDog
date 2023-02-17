@@ -74,7 +74,7 @@ export const lightTheme = {
         divider: 'rgba(255, 255, 255, 0.12)',
         background: {
             default: '#E1E1E1',
-            paper: '#7BABD8',
+            paper: 'rgba(123,171,216 , 0.60)',
             drawer: '#E1E1E1',
         },
         text: {

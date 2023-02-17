@@ -1,4 +1,4 @@
-import {AppBar, Box, Link } from "@mui/material";
+import {AppBar, Box, Link , useTheme } from "@mui/material";
 import {useEffect} from "react";
 import '../../../assets/css/component/_partials/_footer.scss';
 import ListItem from '@mui/material/ListItem';
@@ -12,8 +12,9 @@ import Logo from "../../../assets/logo.png";
 
 export function Footer() {
 
-    useEffect(() => {
-    }, [])
+    const theme = useTheme();
+    const backgroundColor = theme.palette.type === "dark" ? "#6B6F6E" : "#E1E1E1" ;
+
 
     return (
          <AppBar id="footer"  position="static" color="primary" className='footer-container' sx={{ top: 'auto', bottom: 1, minHeight: "50px"  }}>
@@ -56,7 +57,7 @@ export function Footer() {
                          src={Logo}
                            />
                </Grid>
-                <Grid  item xs={12} className="footer-secondary footer-link">©Go with dog - 2022</Grid>
+                <Grid  item xs={12} className="footer-secondary footer-link" sx={{ backgroundColor}}>©Go with dog - 2022</Grid>
              </Grid>
 
          </AppBar>

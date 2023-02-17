@@ -74,7 +74,8 @@ export const darkTheme = {
         divider: 'rgba(255, 255, 255, 0.12)',
         background: {
             default: '#6B6F6E',
-            paper: '#7CA0C2',
+            paper: 'rgba(124,160,194 , 0.60)',
+            drawer: '#6B6F6E'
         },
         text: {
             primary: '#fff',
@@ -120,6 +121,13 @@ export const darkTheme = {
                     }
                 }
             }
-        }
+        },
+        MuiDrawer: {
+             styleOverrides: {
+                paper: {
+                  backgroundColor: '#6B6F6E',
+                }
+             }
+        },
     }
 };
