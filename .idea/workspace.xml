@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5690b17a-d70f-4033-beae-c04b995f1571" name="Changes" comment="page mon compte : ballade by current user done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/ballade/ballades.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/ballade/ballades.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-api/app/Http/Controllers/API/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-api/app/Http/Controllers/API/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-api/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-api/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/place/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/place/places.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +240,7 @@
       <workItem from="1676532580562" duration="1343000" />
       <workItem from="1676535404820" duration="743000" />
       <workItem from="1676536168866" duration="18671000" />
-      <workItem from="1676617068305" duration="8897000" />
+      <workItem from="1676617068305" duration="11420000" />
     </task>
     <task id="LOCAL-00001" summary="add authController">
       <created>1666338638317</created>

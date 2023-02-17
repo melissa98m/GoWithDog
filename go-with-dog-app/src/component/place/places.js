@@ -72,10 +72,12 @@ function Places() {
     return <Container maxWidth="xl" id="place">
 
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Tous les lieux</Typography>
-            <InputLabel>Trier par categorie</InputLabel>
+           <Box sx={{ display: 'flex', justifyContent: 'center' , alignItems: "center"}}>
+            <InputLabel>Trier par categorie :</InputLabel>
                              <Select value={selectedCategory}
                              onChange={(e) => setSelectedCategory(e.target.value)}
                              label="Trier par categorie"
+                             sx={{ marginLeft : "10px"}}
                              >
                               <MenuItem value={null} label="Tous">Tous </MenuItem>
                                <MenuItem value="Restaurant">Restaurant</MenuItem>
@@ -83,6 +85,7 @@ function Places() {
                                <MenuItem value="Hebergement">Hebergement</MenuItem>
                                <MenuItem value="Autre">Autre</MenuItem>
                                 </Select>
+            </Box>
             {loading ? (
                 <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des lieux...</Typography>
             ) : (

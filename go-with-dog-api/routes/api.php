@@ -76,5 +76,6 @@ Route::controller(UserController::class)->group(function () {
     Route::get('users/current-user', 'Current');
     Route::get('users', 'index')->middleware('auth:api');
     Route::get('users/{user}', 'show')->middleware('auth:api');
+    Route::post('users/change-password', 'updatePassword')->middleware('auth:api');
     Route::delete('users/{user}', 'destroy')->middleware('auth:api');
 });

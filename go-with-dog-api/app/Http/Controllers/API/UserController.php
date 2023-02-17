@@ -4,9 +4,11 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Dotenv\Validator;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -54,6 +56,33 @@ class UserController extends Controller
             ['status' => 'Success',
             'data' => $current
             ]);
+    }
+    public function updatePassword(Request $request)
+    {
+        # Validation
+        $request->validate(
+            [
+                'old_password' => 'required',
+                'new_password' => 'required|min:6',
+                'confirm_password' => 'required|same:new_password',
+            ]);
+
+
+        #Match The Old Password
+        $user = $request->user();
+        if (Hash::check($request->old_password, auth()->user()->password)) {
+            $user->update([
+                'password' => Hash::make($request->new_password)
+            ]);
+            return response()->json([
+                'message' => "Password successfully updated",
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => "Old password does not matched",
+            ], 400);
+        }
+
     }
 
 }
