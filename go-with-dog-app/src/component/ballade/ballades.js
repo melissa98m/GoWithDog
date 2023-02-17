@@ -77,6 +77,7 @@ function Ballades() {
                <MenuItem value="Facile">Facile</MenuItem>
                <MenuItem value="Moyen">Moyen</MenuItem>
                <MenuItem value="Difficile">Difficile</MenuItem>
+               <MenuItem value="Expert">Expert</MenuItem>
                 </Select>
             {loading ? (
                 <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>

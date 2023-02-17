@@ -44,7 +44,6 @@ function Home() {
             setLoading(true)
             setData(actualData.data);
             getPlaces();
-            console.log(actualData.data)
             setError(null);
         }).catch((err) => {
             setError(err.message);
@@ -56,7 +55,6 @@ function Home() {
       let getPlaces = async () => {
         await axios.get("http://127.0.0.1:8000/api/places").then((actualData) => {
         setPlaces(actualData.data.data)
-        console.log(places)
         })
         }
 
@@ -69,7 +67,7 @@ function Home() {
             <Box sx={{ maxWidth: '100%' , marginTop: "2%"}}>
                         {data.slice(0,4).map(({id, ballade_name ,ballade_description ,ballade_image, distance , denivele , tag , ballade_latitude , ballade_longitude , created_at , user  }) => {
                 return (
-                <Card sx={{ maxWidth: 300 , display: 'inline-block'  , marginRight: "25px"}} key={id} color="success">
+                <Card sx={{ maxWidth: 300 , display: 'inline-block'  , marginRight: "25px"}} key={id + ballade_name} color="success">
                     <CardHeader
                         title={ ballade_name }
                     />
@@ -140,8 +138,8 @@ function Home() {
                                   {places.map(({id, place_name, address , category}) => {
                                       return (
                                       <Box sx={{ marginLeft: '30px' , marginRight:"auto" , textAlign: "center"}}>
-                                                      <Marker position={[address.latitude, address.longitude]} icon={myIcon} key={id}>
-                                                          <Popup>
+                                                      <Marker position={[address.latitude, address.longitude]} icon={myIcon} key={id + place_name}>
+                                                          <Popup key={id + place_name}>
                                                           <strong>{category.category_name}</strong> <br/>
                                                               {place_name} <br/>
                                                               {address.address} - {address.postal_code} {address.city}

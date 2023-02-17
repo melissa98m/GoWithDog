@@ -3,14 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="5690b17a-d70f-4033-beae-c04b995f1571" name="Changes" comment="page mon compte : ballade by current user done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_navbar/_navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_navbar/_navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-api/app/Http/Controllers/API/PlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-api/app/Http/Controllers/API/PlaceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/assets/css/_App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/assets/css/_App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/assets/css/component/_partials/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/assets/css/component/_partials/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_footer/_footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_footer/_footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_theme/_darkTheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_theme/_darkTheme.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_theme/_lightTheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/_partials/_theme/_lightTheme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/ballade/ballade.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/ballade/ballade.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/ballade/ballades.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/ballade/ballades.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/dashboard/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/dashboard/dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/home/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/place/displayPlace.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/place/displayPlace.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/place/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/place/places.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/services/auth/logginButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/services/auth/logginButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/services/auth/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/services/auth/logout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +196,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/go-with-dog-app/src/component" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/go-with-dog-app/src/component/ballade" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -201,11 +204,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\GoWithDog\go-with-dog-app\src\component\ballade" />
       <recent name="C:\wamp\www\GoWithDog\go-with-dog-app\src\component" />
       <recent name="C:\wamp\www\GoWithDog\go-with-dog-api\resources\views\emails" />
       <recent name="C:\wamp\www\GoWithDog\go-with-dog-api\app\Mail" />
       <recent name="C:\wamp\www\GoWithDog\go-with-dog-api\app\Http\Controllers\API" />
-      <recent name="C:\wamp\www\GoWithDog\go-with-dog-app\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp\www\GoWithDog\go-with-dog-app\src\assets" />
@@ -244,7 +247,8 @@
       <workItem from="1675433581332" duration="4963000" />
       <workItem from="1676532580562" duration="1343000" />
       <workItem from="1676535404820" duration="743000" />
-      <workItem from="1676536168866" duration="7753000" />
+      <workItem from="1676536168866" duration="18671000" />
+      <workItem from="1676617068305" duration="7442000" />
     </task>
     <task id="LOCAL-00001" summary="add authController">
       <created>1666338638317</created>
