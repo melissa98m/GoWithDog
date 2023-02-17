@@ -68,10 +68,12 @@ function Ballades() {
 
     return <Container maxWidth="xl" id="ballade">
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Toutes les ballades</Typography>
-             <InputLabel>Trier par tags</InputLabel>
+            <Box sx={{ display: 'flex', justifyContent: 'center' , alignItems: "center"}}>
+             <InputLabel>Trier par tags:</InputLabel>
              <Select value={selectedDifficulty}
              onChange={(e) => setSelectedDifficulty(e.target.value)}
              label="Trier par tags"
+             sx={{ marginLeft : "10px"}}
              >
               <MenuItem value={null} label="Tous">Tous </MenuItem>
                <MenuItem value="Facile">Facile</MenuItem>
@@ -79,6 +81,7 @@ function Ballades() {
                <MenuItem value="Difficile">Difficile</MenuItem>
                <MenuItem value="Expert">Expert</MenuItem>
                 </Select>
+                </Box>
             {loading ? (
                 <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>
             ) : (

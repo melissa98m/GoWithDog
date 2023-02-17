@@ -68,7 +68,7 @@ function User() {
         }
     }
 
-    return <Container maxWidth="xl" id="user">
+    return <Container maxWidth="md" id="user">
         <Paper sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', py: 10}}>
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Utilisateurs</Typography>
             {loading ? (
