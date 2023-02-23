@@ -28,6 +28,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
     Route::get('current-user', 'currentUser');
+    Route::post('forgot-password','forgotPassword');
 });
 
 Route::controller(AddressController::class)->group(function () {

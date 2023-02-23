@@ -1,11 +1,13 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="fr-FR">
 
 <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
     <meta name="description" content="New Account Email Template.">
     <style type="text/css">
-        a:hover {text-decoration: underline !important;}
+        a:hover {
+            text-decoration: underline !important;
+        }
     </style>
 </head>
 
@@ -35,22 +37,27 @@
                             </tr>
                             <tr>
                                 <td style="padding:0 35px;">
-                                    <h1 style="color:#7BABD8; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">Bonjour <span style="color: #44455f;"> {{ $username }}</span>
+                                    <h1 style="color:#7BABD8; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">
+                                        Bonjour <span style="color: #44455f;"> {{ $username }}</span>
                                     </h1>
                                     <p style="font-size:15px; color:#44455f; margin:8px 0 0; line-height:24px;">
-                                        Votre compte pour la plateforme  "Go with dog" a été créé, vous trouverez vos identifiants ci-dessous<br>.</p>
+                                        Votre compte pour la plateforme "Go with dog" a été créé, vous trouverez vos
+                                        identifiants ci-dessous<br>.</p>
                                     <span
                                         style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
                                     <p
                                         style="color:#455056; font-size:18px;line-height:20px; margin:0; font-weight: 500;">
                                         <strong
-                                            style="display: block;font-size: 13px; margin: 0 0 4px; color:rgba(0,0,0,.64); font-weight:normal;">Username</strong><span style="text-decoration: none;color: #44455f;">{{ $username }}</span>
+                                            style="display: block;font-size: 13px; margin: 0 0 4px; color:rgba(0,0,0,.64); font-weight:normal;">Username</strong><span
+                                            style="text-decoration: none;color: #44455f;">{{ $username }}</span>
                                         <strong
-                                            style="display: block; font-size: 13px; margin: 24px 0 4px 0; font-weight:normal; color:rgba(0,0,0,.64);">Email</strong><span style="color: #44455f;">{{ $email }}</span>
+                                            style="display: block; font-size: 13px; margin: 24px 0 4px 0; font-weight:normal; color:rgba(0,0,0,.64);">Email</strong><span
+                                            style="color: #44455f;">{{ $email }}</span>
                                     </p>
 
                                     <a href="http://localhost:3000"
-                                       style="background:#B1B3C1;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#44455f;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">connectez vous</a>
+                                       style="background:#B1B3C1;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#44455f;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">connectez
+                                        vous</a>
                                 </td>
                             </tr>
                             <tr>
@@ -64,7 +71,8 @@
                 </tr>
                 <tr>
                     <td style="text-align:center;">
-                        <p style="font-size:14px; line-height:18px; margin:0 0 0; color: #44455f">&copy;<strong>www.gowithdog.com</strong> </p>
+                        <p style="font-size:14px; line-height:18px; margin:0 0 0; color: #44455f">&copy;<strong>www.gowithdog.com</strong>
+                        </p>
                     </td>
                 </tr>
                 <tr>
