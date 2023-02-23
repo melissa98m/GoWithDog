@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Box, CardHeader, Container, Card, TableContainer, Table, TablePagination } from "@mui/material";
+import { Box, CardHeader, Container, Card, TableContainer, Table, TablePagination} from "@mui/material";
 import axios from "axios";
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -79,6 +79,7 @@ function Account() {
                       <Typography variant="body" sx={{ marginTop: "10px" }}><strong> Username : </strong>{user.username}</Typography><br/>
                       <Typography variant="body" sx={{ marginTop: "10px" }}><strong> Email : </strong>{user.email}</Typography><br/>
                       <Typography variant="body" sx={{ marginTop: "10px" }}><strong> Date de création : </strong>{user.created_at.slice(0,10)}</Typography><br/>
+                      <Button href="/change-password" variant="outlined" color="secondary">Changer de mot de passe</Button>
            </Box>
         )
         }
