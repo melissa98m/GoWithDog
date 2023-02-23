@@ -14,25 +14,25 @@ Avant de pouvoir exécuter l'application, vous devez avoir les éléments suivan
 
 Installation
 
-    Clonez le repository Git.
-    Dans le dossier racine, exécutez la commande suivante pour installer les dépendances Laravel:
+ Clonez le repository Git.
+ Dans le dossier racine, exécutez la commande suivante pour installer les dépendances Laravel:
 
-composer install
+    composer install
 
-    Renommez le fichier .env.example en .env et modifiez les variables d'environnement selon vos besoins (par exemple, la configuration de la base de données).
-    Générez une clé d'application en exécutant la commande suivante:
+  Renommez le fichier .env.example en .env et modifiez les variables d'environnement selon vos besoins (par exemple, la configuration de la base de données).
+  Générez une clé d'application en exécutant la commande suivante:
 
 
 
-php artisan key:generate
+    php artisan key:generate
 
-    Exécutez les migrations pour créer les tables de base de données:
+  Exécutez les migrations pour créer les tables de base de données:
 
-php artisan migrate
+    php artisan migrate
 
-    Installez les dépendances React en exécutant la commande suivante dans le dossier go-with-dog-app:
+ Installez les dépendances React en exécutant la commande suivante dans le dossier go-with-dog-app:
 
-npm install
+    npm install
 
 Configuration
 
@@ -52,15 +52,15 @@ Exécution
 
 Pour exécuter l'application, exécutez les deux commandes suivantes dans deux terminaux différents:
 
-    Dans le dossier racine, exécutez la commande suivante pour démarrer l'API:
+Dans le dossier racine, exécutez la commande suivante pour démarrer l'API:
 
-php artisan serve
+    php artisan serve
 
-    Dans le dossier client, exécutez la commande suivante pour démarrer le serveur de développement de React:
+Dans le dossier client, exécutez la commande suivante pour démarrer le serveur de développement de React:
 
 
 
-npm start
+    npm start
 
 Ensuite, accédez à l'URL suivante dans votre navigateur:
 
