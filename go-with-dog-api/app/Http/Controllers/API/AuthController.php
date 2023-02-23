@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Exception;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -13,15 +14,21 @@ use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Register as MailRegister;
 use App\Mail\ResetPasswordEmail as ResetPasswordEmail;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Foundation\Auth\ResetsPasswords;
+
+
 
 class AuthController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register' , 'forgotPassword']]);
+
     }
 
     public function login(Request $request)
@@ -166,6 +173,45 @@ class AuthController extends Controller
             return response()->json([
                 'message' => $e->getMessage()
             ], 500);
+        }
+    }
+
+    public function resetPassword(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|confirmed|min:8',
+            'token' => 'required|string'
+        ]);
+        try {
+            // find the token
+            $passwordReset = DB::table('password_resets')->where('token', $request->token);
+            if (!$passwordReset) {
+                return response(['message' => 'token expiré ou inexistant'], 422);
+            }
+            // find user's email
+            $user = DB::table('users')->where('email', $request->email);
+            if (!$user) {
+                return response(['message' => 'Utilisateur non trouvé'], 422);
+            }
+            // update user password
+            $userUpdateResult = DB::table('users')->where('email', $request->email)->update([
+                'password' => Hash::make($request->password)
+            ]);
+
+            if (!$userUpdateResult) {
+                return response(['message' => 'Erreur lors de la reinitialisation du mot de passe'], 422);
+            }
+            // delete current token
+            $deleteTokenResult = DB::table('password_resets')->where('email', $request->email)->delete();
+
+            if (!$deleteTokenResult) {
+                return response(['message' => 'Erreur lors de la suppression du token'], 422);
+            }
+
+            return response(['message' => 'Mot de passe bien reinitialisé'], 200);
+        }catch (\Exception $e) {
+            return response(['message' => $e->getMessage()], 400);
         }
     }
 }

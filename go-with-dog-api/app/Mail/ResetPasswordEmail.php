@@ -32,7 +32,7 @@ class ResetPasswordEmail extends Mailable
             ->from("melissa.mangione+gowithdog@gmail.com")
             ->with([
                 'token' => $this->token,
-                'url' => config('app.url') . '/reset-password?token=' . $this->token
+                'url' => 'http://localhost:3000/reset-password/' . $this->token
             ]);
     }
 }

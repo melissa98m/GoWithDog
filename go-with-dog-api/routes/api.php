@@ -29,6 +29,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
     Route::get('current-user', 'currentUser');
     Route::post('forgot-password','forgotPassword');
+    Route::post('reset-password', 'resetPassword');
 });
 
 Route::controller(AddressController::class)->group(function () {
