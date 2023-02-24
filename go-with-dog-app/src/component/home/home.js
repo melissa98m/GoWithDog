@@ -110,19 +110,26 @@ function Home() {
                    backgroundColor: "#B1B3C1" , borderRadius: "10px" , marginBottom: "10px" , padding : "10px"}}>
            <Grid container >
            <Grid item xs={8} sx={{ paddingLeft: "10px"}}>
-            <Typography variant="h3" sx={{textAlign: "left" , marginBottom: "25px" }} >
+            <Typography variant="h3" sx={{textAlign: "left" , marginBottom: "25px" , fontWeight: "bold" , fontSize: "20px"}} >
              Qui sommes nous?</Typography>
-             <Typography variant="body" sx={{textAlign: "left" , marginBottom: "55px" }} >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna mi, placerat non pellentesque nec, luctus id tellus.
-               Nulla molestie ac felis eget vehicula. Proin elementum dui at malesuada faucibus. Mauris pulvinar metus id lacinia mollis.
-                Duis non ante fringilla, vulputate est eget, malesuada sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 Cras iaculis justo pretium scelerisque congue. Praesent mi dolor, vulputate in tempus vitae, hendrerit sit amet metus.
-                  Mauris convallis metus in iaculis mattis. Cras gravida sem vel lorem dignissim, nec egestas purus bibendum. Aliquam nec tellus est.
-                  Phasellus sed mi suscipit metus fermentum convallis ut at libero.
-                                       </Typography>
+             <Typography variant="body" sx={{textAlign: "left" }} >
+              Bienvenue sur notre site dédié aux amoureux des sorties en compagnie de leur fidèle compagnon à quatre pattes ! Ici,
+              vous trouverez une liste complète des endroits autorisés aux chiens pour profiter de promenades en pleine
+               nature ou en ville.
+               </Typography> <br/>
+               <Typography variant="body" sx={{textAlign: "left" , marginTop: "5px" }} >
+               Mais ce n'est pas tout ! Nous vous offrons également la possibilité d'ajouter vos propres découvertes pour que d'autres amateurs de balades puissent également en profiter.
+               Nous sommes conscients que chaque chien est différent et que chaque propriétaire a des préférences personnelles. C'est pourquoi notre site offre des options de recherche
+               pour vous aider à trouver les lieux adaptés à votre chien et vous.
+               Nous sommes convaincus que la promenade avec votre chien est une expérience enrichissante pour vous et votre compagnon.
+               Nous espérons que notre site vous aidera à trouver les meilleurs endroits pour passer du temps ensemble en plein air ou en intérieur.
+               </Typography><br/>
+               <Typography variant="body" sx={{textAlign: "left" , marginTop: "5px" }} >
+               N'oubliez pas de prendre soin de votre chien en apportant de l'eau fraîche et en ramassant les déchets pour maintenir ces espaces propres et agréables pour tous.
+               </Typography>
                                    </Grid>
                   <Grid item xs={4} sx={{ marginTop: "15px"}}>
-                   <img src={Presentation} alt="Presentation" width="200px"/>
+                   <img src={Presentation} alt="Presentation" width="300px"/>
                    </Grid>
           </Grid>
 </Box>
