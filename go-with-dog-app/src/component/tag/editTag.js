@@ -71,6 +71,8 @@ const handleChange = (color) => {
              </Grid>
                 <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="edit-tag-title">Editer un tag de lieux</Typography>
                 <form onSubmit={handleSubmit(editTagForm)}>
+                <Grid container spacing={8}>
+                 <Grid item xs={12} sx={{ display: 'flex',flexDirection: 'column' , textAlign: 'center' , justifyContent: 'center'}}>
                     <FormControl>
                           <Controller
                               name="tag_name"
@@ -85,7 +87,7 @@ const handleChange = (color) => {
                                        }
                                    )}
                                    onChange={(e) => setName(e.target.value)}
-                                   style={{width: 400, height: 50}}
+                                   sx={{mt: 5, height: 50}}
                                    label="Nom du tag"
                                    variant="standard"
                                    defaultValue={tag_name}
@@ -98,10 +100,12 @@ const handleChange = (color) => {
                             <Typography variant="body1">Couleur :</Typography>
                             <input type="color" id="color" name="color" required className="color-picker"
                             value={color} onChange={(e) => setColor(e.target.value)} label="Couleur"/>
-                        <Box className="action-button">
+                       </FormControl>
+                        </Grid>
+                        <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' , textAlign: 'center'}}>
                             <Button type="submit" sx={{m: 3}} variant="contained">Envoyer</Button>
-                        </Box>
-                    </FormControl>
+                        </Grid>
+                        </Grid>
                 </form>
             </Box>
         </Modal>

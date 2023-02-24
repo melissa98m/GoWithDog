@@ -61,6 +61,7 @@ function NewAddress(props) {
             onClose={() => setShowNew(false)}
             aria-labelledby="new-address-title"
             aria-describedby="child-modal-description"
+
         >
             <Box className="modal-crud modal-crud-address" sx={{bgcolor: 'background.default'}}>
             <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
@@ -68,6 +69,8 @@ function NewAddress(props) {
               </Grid>
                 <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="new-address-title">Nouveau address de lieux</Typography>
                 <form onSubmit={handleSubmit(newAddressForm)} className="addressForm">
+                    <Grid container spacing={8}>
+                    <Grid item xs={12} sx={{ display: 'flex',flexDirection: 'column' , textAlign: 'center' , justifyContent: 'center'}}>
                     <FormControl>
                         <Controller
                           name="address"
@@ -83,7 +86,7 @@ function NewAddress(props) {
                                    }
                                )}
                                onChange={(e) => setName(e.target.value)}
-                               style={{width: 400, height: 50}}
+                               sx={{mt: 5, height: 50}}
                                label="Adresse"
                                variant="standard"
                                value={address}
@@ -109,7 +112,7 @@ function NewAddress(props) {
                                        }
                                    )}
                                    onChange={(e) => setPostalCode(e.target.value)}
-                                   style={{width: 400, height: 50}}
+                                   sx={{mt: 5, height: 50}}
                                    label="Code Postal"
                                    variant="outlined"
                                    value={postal_code}
@@ -129,7 +132,7 @@ function NewAddress(props) {
                                        }
                                    )}
                                    onChange={(e) => setCity(e.target.value)}
-                                   style={{width: 400, height: 50}}
+                                   sx={{mt: 5, height: 50}}
                                    label="Ville"
                                    variant="outlined"
                                    value={city}
@@ -180,12 +183,13 @@ function NewAddress(props) {
                                        {errors.longitude ? (
                                         <Alert sx={{mt:2, p:0, pl:2}} severity="error">{errors.longitude?.message}</Alert>
                                          ) : ''}
-                    <Button variant="outlined" color="primary"  href="https://www.coordonnees-gps.fr/" target="_blank" variant="outlined" color="secondary">Vous ne connaissez pas la latitude et longitude de votre adresse</Button>
-
-                        <Box className="action-button">
+                                         </FormControl>
+                    <Button variant="outlined"  href="https://www.coordonnees-gps.fr/" target="_blank"  color="secondary" sx={{ marginTop: '10px'}}>Adresse inconnue?</Button>
+                    </Grid>
+                    <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' , textAlign: 'center'}}>
                             <Button type="submit" sx={{m: 3}} variant="contained">Envoyer</Button>
-                        </Box>
-                    </FormControl>
+                     </Grid>
+                    </Grid>
                 </form>
 
             </Box>

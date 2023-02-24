@@ -99,7 +99,7 @@ function EditAddress(props) {
                                        }
                                    )}
                                    onChange={(e) => setName(e.target.value)}
-                                   style={{width: 400, height: 50}}
+                                   sx={{mt: 5, height: 50}}
                                    label="Adresse"
                                    variant="standard"
                                    defaultValue={address}
@@ -123,7 +123,7 @@ function EditAddress(props) {
                                        }
                                    )}
                                    onChange={(e) => setPostalCode(e.target.value)}
-                                   style={{width: 400, height: 50}}
+                                   sx={{mt: 5, height: 50}}
                                    label="Code Postal"
                                    variant="outlined"
                                    defaultValue={postal_code}
@@ -142,7 +142,7 @@ function EditAddress(props) {
                                        }
                                    )}
                                    onChange={(e) => setCity(e.target.value)}
-                                   style={{width: 400, height: 50}}
+                                   sx={{mt: 5, height: 50}}
                                    label="Ville"
                                    variant="outlined"
                                    defaultValue={city}

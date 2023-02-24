@@ -72,7 +72,7 @@ function NewTag(props) {
                                    }
                                )}
                                onChange={(e) => setName(e.target.value)}
-                               style={{width: 400, height: 50}}
+                               sx={{mt: 5, height: 50}}
                                label="Nom"
                                variant="standard"
                                value={tag_name}

@@ -162,7 +162,7 @@ const handleClickShowPassword = () => {
               ) : (
                 ""
               )}
-              <Button href="/forgot-password" variant="outlined" color="secondary">Mot de passe oublié?</Button>
+              <Button href="/forgot-password" variant="outlined" color="secondary" sx={{ marginTop: "10px" }}>Mot de passe oublié?</Button>
             </Grid>
             <Grid
               item
@@ -174,7 +174,7 @@ const handleClickShowPassword = () => {
                 justifyContent: "center",
               }}
             >
-              <Button variant="contained" type="submit" sx={{ m: 8 }}>
+              <Button variant="contained" type="submit" sx={{ marginTop: "10px" }}>
                 Connexion
               </Button>
             </Grid>
