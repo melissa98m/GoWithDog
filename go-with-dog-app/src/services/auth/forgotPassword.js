@@ -7,6 +7,7 @@ import axios from "axios";
 
 
 const ForgotPassword = () => {
+ document.title = 'Mot de passe oublié'
 
     const [id, setID] = useState("");
   const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ const ForgotPassword = () => {
          setMessage(<Alert severity="success" autoHideDuration={3000}>Demande de reinitialisation envoyée</Alert>))
          .catch(({ response }) => {
            if (response.status != 200) {
-               setMessage(<Alert severity="danger" autoHideDuration={3000}>Erreur lors de l'envoi de la demande</Alert>)
+               setMessage(<Alert severity="error" autoHideDuration={3000}>Erreur lors de l'envoi de la demande</Alert>)
            }
          });
      };

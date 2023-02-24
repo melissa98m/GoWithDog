@@ -31,7 +31,6 @@ class ResetPasswordEmail extends Mailable
             ->view('emails.reset-password')
             ->from("melissa.mangione+gowithdog@gmail.com")
             ->with([
-                'token' => $this->token,
                 'url' => 'http://localhost:3000/reset-password/' . $this->token
             ]);
     }

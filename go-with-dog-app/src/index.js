@@ -31,6 +31,7 @@ import Login from "./services/auth/login";
 import Logout from "./services/auth/logout";
 import Register from "./services/auth/register";
 import ForgotPassword from "./services/auth/forgotPassword";
+import ResetPassword from './/services/auth/resetPassword';
 import Account from "./component/account/account";
 import ChangePassword from "./component/account/changePassword";
 import MentionsLegales from "./component/legal/mentionsLegales";
@@ -86,6 +87,7 @@ function CustomTheme() {
                     <Route exact path="/" element={<Home/>}>Accueil</Route>
                     <Route exact path="login" element={auth.getToken() ? <Home adminMessage='alreadyLogged'/> : <Login/> }>Login</Route>
                     <Route exact path="forgot-password" element={auth.getToken() ? <Home adminMessage='alreadyLogged'/> :<ForgotPassword/>}>Mot de passe oublié</Route>
+                    <Route exact path="reset-password/:token" element={<ResetPassword/>}>ResetPassword</Route>
                     <Route exact path="register" element={<Register/>}>Inscription</Route>
                     <Route exact path="places" element={<Places/>}>Places</Route>
                     <Route exact path="ballades" element={<Ballades/>}>Ballades</Route>

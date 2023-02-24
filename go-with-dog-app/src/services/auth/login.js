@@ -162,6 +162,7 @@ const handleClickShowPassword = () => {
               ) : (
                 ""
               )}
+              <Button href="/forgot-password" variant="outlined" color="secondary">Mot de passe oublié?</Button>
             </Grid>
             <Grid
               item

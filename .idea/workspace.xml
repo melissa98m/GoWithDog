@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="5690b17a-d70f-4033-beae-c04b995f1571" name="Changes" comment="page mon compte : ballade by current user done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/account/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/account/account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/component/address/newAddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/component/address/newAddress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-api/app/Http/Controllers/API/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-api/app/Http/Controllers/API/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-api/app/Mail/ResetPasswordEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-api/app/Mail/ResetPasswordEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-api/resources/views/emails/reset-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-api/resources/views/emails/reset-password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/services/auth/forgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/services/auth/forgotPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-with-dog-app/src/services/auth/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/go-with-dog-app/src/services/auth/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +247,9 @@
       <workItem from="1676536168866" duration="18671000" />
       <workItem from="1676617068305" duration="14312000" />
       <workItem from="1676631585817" duration="9034000" />
-      <workItem from="1677136540654" duration="5513000" />
+      <workItem from="1677136540654" duration="20001000" />
+      <workItem from="1677221877839" duration="1183000" />
+      <workItem from="1677223434701" duration="3167000" />
     </task>
     <task id="LOCAL-00001" summary="add authController">
       <created>1666338638317</created>

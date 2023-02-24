@@ -22,7 +22,6 @@ use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 
-
 class AuthController extends Controller
 {
 
@@ -160,11 +159,9 @@ class AuthController extends Controller
             Mail::to($validatedData['email'])->send(new ResetPasswordEmail($token));
 
             return response()->json(
-                ['message' => 'Un e-mail de réinitialisation de mot de passe a été envoyé.',
-                    'data' => $token
-                ]
+                ['message' => 'Un e-mail de réinitialisation de mot de passe a été envoyé.']
                 , 200);
-        }catch (ValidationException $e) {
+        } catch (ValidationException $e) {
             return response()->json([
                 'message' => $e->getMessage(),
                 'errors' => $e->errors()
@@ -172,7 +169,7 @@ class AuthController extends Controller
         } catch (Exception $e) {
             return response()->json([
                 'message' => $e->getMessage()
-            ], 500);
+            ], 400);
         }
     }
 
@@ -180,7 +177,7 @@ class AuthController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required|confirmed|min:8',
+            'password' => 'required|min:8',
             'token' => 'required|string'
         ]);
         try {
@@ -203,14 +200,13 @@ class AuthController extends Controller
                 return response(['message' => 'Erreur lors de la reinitialisation du mot de passe'], 422);
             }
             // delete current token
-            $deleteTokenResult = DB::table('password_resets')->where('email', $request->email)->delete();
-
+            $deleteTokenResult = DB::table('password_resets')->where('token', $request->token)->delete();
             if (!$deleteTokenResult) {
                 return response(['message' => 'Erreur lors de la suppression du token'], 422);
             }
 
             return response(['message' => 'Mot de passe bien reinitialisé'], 200);
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             return response(['message' => $e->getMessage()], 400);
         }
     }
