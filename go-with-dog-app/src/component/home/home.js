@@ -39,7 +39,7 @@ function Home() {
 
 
     useEffect(() => {
-        axios.get('http://api.gowithdog.fr/api/ballades').then((actualData) => {
+        axios.get('https://api.gowithdog.fr/api/ballades').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);
@@ -53,7 +53,7 @@ function Home() {
         });
     }, []);
       let getPlaces = async () => {
-        await axios.get("http://api.gowithdog.fr/api/places").then((actualData) => {
+        await axios.get("https://api.gowithdog.fr/api/places").then((actualData) => {
         setPlaces(actualData.data.data)
         })
         }
@@ -74,7 +74,7 @@ function Home() {
                     <CardMedia
                         component="img"
                         height="160"
-                        image={`http://127.0.0.1:8000/storage/uploads/ballades/${ballade_image}`}
+                        image={`https://go-with-dog.vercel.app/storage/uploads/ballades/${ballade_image}`}
                         alt={ballade_name}
                     />
                     <CardContent>
