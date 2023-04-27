@@ -100,7 +100,7 @@ function Ballade() {
                                             <TableCell  sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>{ballade_description.slice(0,30) ?? '--'}</TableCell>
                                             <TableCell sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>
                                                 { ballade_image ? (
-                                                    <Box component="img" src={`http://127.0.0.1:8000/storage/uploads/ballades/${ballade_image}`} alt={ballade_image} sx={{ width: "80px" }}/>
+                                                    <Box component="img" src={`http://api.gowithdog.fr/storage/uploads/ballades/${ballade_image}`} alt={ballade_image} sx={{ width: "80px" }}/>
                                                 ) : (
                                                     '--'
                                                 ) }

@@ -245,7 +245,7 @@ function EditBallade(props) {
                               control={control}
                               render={() => (
                                   <Box sx={{ display: 'flex'}}>
-                                      <Box component="img" src={`http://127.0.0.1:8000/storage/uploads/ballades/${cImage}`} alt={cImage} sx={{ width: "80px", mr: 3 }}/>
+                                      <Box component="img" src={`http://api.gowithdog.fr/storage/uploads/ballades/${cImage}`} alt={cImage} sx={{ width: "80px", mr: 3 }}/>
                                       <Input
                                        type='file'
                                        {...register('ballade_image')}
