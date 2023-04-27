@@ -67,7 +67,7 @@ function Home() {
             <Box sx={{ maxWidth: '100%' , marginTop: "2%"}}>
                         {data.slice(0,4).map(({id, ballade_name ,ballade_description ,ballade_image, distance , denivele , tag , ballade_latitude , ballade_longitude , created_at , user  }) => {
                 return (
-                <Card sx={{ Width: 300 , display: 'inline-block'  , marginRight: "25px"}} key={id + ballade_name} color="success">
+                <Card sx={{ width: 300 , display: 'inline-block'  , marginRight: "25px"}} key={id + ballade_name} color="success">
                     <CardHeader
                         title={ ballade_name }
                     />
