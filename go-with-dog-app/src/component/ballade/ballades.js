@@ -92,7 +92,7 @@ function Ballades() {
                                     return (
 
 
-                                        <Card sx={{ Width: 300 , display: 'inline-block' , margin: 3 , height: '500px'}} key={id}>
+                                        <Card sx={{ width: '300px' , display: 'inline-block' , margin: 3 , height: '500px'}} key={id}>
                                             <CardMedia
                                                 component="img"
                                                 height="140"
