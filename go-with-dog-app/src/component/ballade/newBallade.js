@@ -96,7 +96,7 @@ function NewBallade(props) {
 
             };
 
-            let res = await axios.post('http://api.gowithdog.fr/api/ballades/', formData, {
+            let res = await axios.post('http://api.gowithdog.fr/api/ballades', formData, {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             });
             if (res.status === 200) {
