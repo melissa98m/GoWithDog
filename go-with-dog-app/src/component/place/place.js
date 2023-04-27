@@ -83,9 +83,9 @@ function Place() {
                                     <TableCell key={2}>Nom</TableCell>
                                     <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={3}>Description</TableCell>
                                     <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={4}>Image</TableCell>
-                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={5}>address</TableCell>
+                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={5}>Adresse</TableCell>
                                     <TableCell key={6}>Categorie</TableCell>
-                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={7}>Createur</TableCell>
+                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={7}>Créateur</TableCell>
                                     <TableCell key={8} align={'right'}>Actions</TableCell>
                                 </TableRow>
                             </TableHead>
