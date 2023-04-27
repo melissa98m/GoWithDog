@@ -84,7 +84,7 @@ function NewPlace(props) {
                 address: address
             };
 
-            let res = await axios.post('http://api.gowithdog.fr/api/places/', formData, {
+            let res = await axios.post('http://api.gowithdog.fr/api/places', formData, {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             });
             if (res.status === 200) {
