@@ -50,8 +50,8 @@ function EditPlace(props) {
     }, [])
 
     let getAlls = async () => {
-        await axios.get("http://api.gowithdog.fr/api/categories/").then((actualData) => { setCategories(actualData.data.data) });
-        await axios.get("http://api.gowithdog.fr/addresses/").then((actualData) => { setAddresses(actualData.data.data) });
+        await axios.get("http://api.gowithdog.fr/api/categories").then((actualData) => { setCategories(actualData.data.data) });
+        await axios.get("http://api.gowithdog.fr/addresses").then((actualData) => { setAddresses(actualData.data.data) });
     }
 
     let editPlaceForm = async () => {

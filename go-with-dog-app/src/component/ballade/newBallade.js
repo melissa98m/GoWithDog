@@ -67,7 +67,7 @@ function NewBallade(props) {
     }
 
     let getAlls = async () => {
-        await axios.get("http://api.gowithdog.fr/api/tags/" ).then((actualData) => { setTags(actualData.data.data) });
+        await axios.get("http://api.gowithdog.fr/api/tags" ).then((actualData) => { setTags(actualData.data.data) });
     }
 
     let newBalladeForm = async () => {

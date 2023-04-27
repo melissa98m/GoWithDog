@@ -27,7 +27,7 @@ function NewAddress(props) {
 
     let newAddressForm = async () => {
         try {
-            let res = await axios.post('http://api.gowithdog.fr/api/addresses/', {address , city , postal_code , latitude , longitude} , {
+            let res = await axios.post('http://api.gowithdog.fr/api/addresses', {address , city , postal_code , latitude , longitude} , {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             })
             if (res.status === 200) {
