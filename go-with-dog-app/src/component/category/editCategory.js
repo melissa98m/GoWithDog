@@ -23,7 +23,7 @@ function EditCategory(props) {
                 id: id ? id : parseInt(oneCategory.id),
                 category_name: oneCategory.category_name ? category_name : oneCategory.category_name,
             }
-            let res = await axios.patch("http://api.gowithdog.fr/api/categories/ "+oneCategory.id, {category_name}, {
+            let res = await axios.patch("http://api.gowithdog.fr/api/categories/"+oneCategory.id, {category_name}, {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             });
             if (res.status === 200) {
