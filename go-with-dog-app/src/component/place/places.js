@@ -97,7 +97,7 @@ function Places() {
                                 {filteredData.map(({id, place_name, place_description , place_image, category, address}) => {
                                     return (
 
-                                        <Card sx={{ maxWidth: 500 , display: 'inline-block' , margin: 3 , height: '500px'}} key={id}>
+                                        <Card sx={{ Width: 300 , display: 'inline-block' , margin: 3 , height: '500px'}} key={id}>
                                             <CardMedia
                                                 component="img"
                                                 height="140"
