@@ -94,7 +94,7 @@ function Account() {
                                             <CardMedia
                                                 component="img"
                                                 height="140"
-                                                src={`http://api.gowithdog.fr/storage/uploads/places/${place_image}`}
+                                                src={`https://api.gowithdog.fr/storage/uploads/places/${place_image}`}
                                                 alt={place_name}
                                             />
                                             <CardContent>

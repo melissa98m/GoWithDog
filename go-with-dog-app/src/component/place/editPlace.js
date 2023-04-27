@@ -50,8 +50,8 @@ function EditPlace(props) {
     }, [])
 
     let getAlls = async () => {
-        await axios.get("http://api.gowithdog.fr/api/categories/").then((actualData) => { setCategories(actualData.data.data) });
-        await axios.get("http://api.gowithdog.fr/addresses/").then((actualData) => { setAddresses(actualData.data.data) });
+        await axios.get("https://api.gowithdog.fr/api/categories/").then((actualData) => { setCategories(actualData.data.data) });
+        await axios.get("https://api.gowithdog.fr/addresses/").then((actualData) => { setAddresses(actualData.data.data) });
     }
 
     let editPlaceForm = async () => {
@@ -76,7 +76,7 @@ function EditPlace(props) {
                 address: address ? address : onePlace.address.id,
             }
 
-            let res = await axios.post("http://api.gowithdog.fr/api/places/" + onePlace.id, formData, {
+            let res = await axios.post("https://api.gowithdog.fr/api/places/" + onePlace.id, formData, {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             })
             if (res.status === 200) {
@@ -183,7 +183,7 @@ function EditPlace(props) {
                               control={control}
                               render={() => (
                                   <Box sx={{ display: 'flex'}}>
-                                      <Box component="img" src={`http://api.gowithdog.fr/storage/uploads/places/${cImage}`} alt={cImage} sx={{ width: "80px", mr: 3 }}/>
+                                      <Box component="img" src={`https://go-with-dog.vercel.app/storage/uploads/places/${place_image}`} alt={place_image} sx={{ width: "80px", mr: 3 }}/>
                                       <Input
                                        type='file'
                                        {...register('place_image')}

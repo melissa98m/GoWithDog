@@ -17,7 +17,7 @@ function NewCategory(props) {
 
     let newCategoryForm = async () => {
         try {
-            let res = await axios.post('http://api.gowithdog.fr/api/categories/', {category_name}, {
+            let res = await axios.post('https://api.gowithdog.fr/api/categories/', {category_name}, {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             });
             if (res.status === 200) {

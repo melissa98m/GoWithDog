@@ -15,7 +15,7 @@ function DeleteCategory(props) {
     let deleteCategory = async (e) => {
         e.preventDefault();
         try {
-            let res = await axios.delete('http://api.gowithdog.fr/api/categories/'+ oneCategory.id , {
+            let res = await axios.delete('https://api.gowithdog.fr/api/categories/'+ oneCategory.id , {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             });
             if (res.status === 200) {
