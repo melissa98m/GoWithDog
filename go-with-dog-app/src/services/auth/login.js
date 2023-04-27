@@ -38,6 +38,7 @@ function Login() {
       } else {
         setToastMessage({message: "Une erreur est survenue", severity: "error"});
         setShowToast(true);
+        console.log(res)
     }
 } catch (err) {
     let errors = err.response.data;
