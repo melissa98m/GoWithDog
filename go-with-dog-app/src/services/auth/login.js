@@ -31,7 +31,7 @@ function Login() {
       formData.append('password', password)
       let res = await axios.post("http://api.gowithdog.fr/api/login", formData, {
         "headers" : { "Content-Type":"multipart/form-data" }
-        console.log(res)
+        console.log(res);
 
       });
       if (res.status === 200) {
