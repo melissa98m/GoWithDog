@@ -27,7 +27,7 @@ function EditTag(props) {
                 tag_name:tag_name ? tag_name : oneTag.tag_name,
                 color: color ? color : oneTag.color
             }
-            let res = await axios.patch("http://127.0.0.1:8000/api/tags/" + oneTag.id, {tag_name, color} , {
+            let res = await axios.patch("http://api.gowithdog.fr/api/tags/" + oneTag.id, {tag_name, color} , {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             })
             if (res.status === 200) {

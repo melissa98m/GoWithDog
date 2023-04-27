@@ -27,7 +27,7 @@ const Contact = () => {
        formData.append("subject", subject);
        formData.append("contenu", contenu);
        await axios
-         .post(`http://127.0.0.1:8000/api/contact`, formData ,
+         .post(`http://api.gowithdog.fr/api/contact`, formData ,
          setMessage(<Alert severity="success" autoHideDuration={3000}>Message envoyé</Alert>))
          .catch(({ response }) => {
            if (response.status != 200) {

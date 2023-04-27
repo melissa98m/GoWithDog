@@ -58,7 +58,7 @@ function EditBallade(props) {
     }, [])
 
     let getAlls = async () => {
-        await axios.get("http://127.0.0.1:8000/api/tags/").then((actualData) => { setTags(actualData.data.data) });
+        await axios.get("http://api.gowithdog.fr/api/tags/").then((actualData) => { setTags(actualData.data.data) });
     }
 
     let editBalladeForm = async () => {
@@ -89,7 +89,7 @@ function EditBallade(props) {
                 tag: tag ? tag : oneBallade.tag.id,
             }
 
-            let res = await axios.post("http://127.0.0.1:8000/api/ballades/" + oneBallade.id, formData, {
+            let res = await axios.post("http://api.gowithdog.fr/api/ballades/" + oneBallade.id, formData, {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             })
             if (res.status === 200) {

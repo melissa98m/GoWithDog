@@ -71,7 +71,7 @@ document.title = 'Reinisialisé le mot de passe';
          formData.append('passwordConfirmation', passwordConfirmation)
          formData.append('token' , token)
          await axios
-         .post(`http://127.0.0.1:8000/api/reset-password`, formData ,
+         .post(`http://api.gowithdog.fr/api/reset-password`, formData ,
             setMessage(<Alert severity="success" autoHideDuration={3000}>Demande de reinitialisation envoyée</Alert>),
             setBtn(<Button color="secondary" href="/login">Retourner sur la page login</Button>)
           )

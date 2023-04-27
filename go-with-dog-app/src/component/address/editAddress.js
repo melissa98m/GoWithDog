@@ -38,7 +38,7 @@ function EditAddress(props) {
                 latitude: latitude ? latitude : oneAddress.latitude,
                 longitude: longitude ? longitude : oneAddress.longitude
             }
-            let res = await axios.patch("http://127.0.0.1:8000/api/adresses/" + oneAddress.id, {address, city , postal_code , latitude , longitude} , {
+            let res = await axios.patch("http://api.gowithdog.fr/api/adresses/" + oneAddress.id, {address, city , postal_code , latitude , longitude} , {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             })
             if (res.status === 200) {

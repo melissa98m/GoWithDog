@@ -39,7 +39,7 @@ function Home() {
 
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/ballades').then((actualData) => {
+        axios.get('http://api.gowithdog.fr/api/ballades').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);
@@ -53,13 +53,13 @@ function Home() {
         });
     }, []);
       let getPlaces = async () => {
-        await axios.get("http://127.0.0.1:8000/api/places").then((actualData) => {
+        await axios.get("http://api.gowithdog.fr/api/places").then((actualData) => {
         setPlaces(actualData.data.data)
         })
         }
 
     return <Container maxWidth="xl" id='home'>
-     <Typography variant="h1" sx={{textAlign: "left" , marginTop: "15px" , fontSize: "14px"}} gutterBottom>Bienvenue sur go with dog! Le site qui réferencie les adresses dogfriendly</Typography>
+     <Typography variant="h1" sx={{textAlign: "left" , marginTop: "15px" , fontSize: "25px"}} gutterBottom>Bienvenue sur go with dog! Le site qui réferencie les adresses dogfriendly</Typography>
         <Typography variant="h2" sx={{textAlign: "center" , marginTop: "35px"}} gutterBottom>Dernières ballades ajoutées</Typography>
         {loading ? (
             <Typography variant="body" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>

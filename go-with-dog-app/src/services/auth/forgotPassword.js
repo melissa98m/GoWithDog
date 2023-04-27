@@ -21,7 +21,7 @@ const ForgotPassword = () => {
        const formData = new FormData();
        formData.append("email", email);
        await axios
-         .post(`http://127.0.0.1:8000/api/forgot-password`, formData ,
+         .post(`http://api.gowithdog.fr/api/forgot-password`, formData ,
          setMessage(<Alert severity="success" autoHideDuration={3000}>Demande de reinitialisation envoyée</Alert>))
          .catch(({ response }) => {
            if (response.status != 200) {

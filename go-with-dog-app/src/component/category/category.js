@@ -42,7 +42,7 @@ function Category() {
     };
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/categories').then((actualData) => {
+        axios.get('http://api.gowithdog.fr/api/categories').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);

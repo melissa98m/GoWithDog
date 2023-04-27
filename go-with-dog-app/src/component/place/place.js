@@ -43,7 +43,7 @@ function Place() {
     };
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/places').then((actualData) => {
+        axios.get('http://api.gowithdog.fr/api/places').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);
@@ -98,7 +98,7 @@ function Place() {
                                             <TableCell sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>{place_description.slice(0,30) ?? '--'}</TableCell>
                                             <TableCell sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>
                                                 { place_image ? (
-                                                    <Box component="img" src={`http://127.0.0.1:8000/storage/uploads/places/${place_image}`} alt={place_image} sx={{ width: "80px" }}/>
+                                                    <Box component="img" src={`http://api.gowithdog.fr/storage/uploads/places/${place_image}`} alt={place_image} sx={{ width: "80px" }}/>
                                                 ) : (
                                                     '--'
                                                 ) }

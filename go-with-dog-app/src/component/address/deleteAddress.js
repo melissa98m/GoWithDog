@@ -15,7 +15,7 @@ function DeleteAddress(props) {
     let deleteAddress = async (e) => {
         e.preventDefault();
         try {
-            let res = await axios.delete('http://127.0.0.1:8000/api/addresses/' + oneAddress.id , {
+            let res = await axios.delete('http://api.gowithdog.fr/api/addresses/' + oneAddress.id , {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             })
             if (res.status === 200) {

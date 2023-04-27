@@ -41,7 +41,7 @@ function User() {
     };
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/users'
+        axios.get('http://api.gowithdog.fr/api/users'
         , {
          "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
         }).then((actualData) => {

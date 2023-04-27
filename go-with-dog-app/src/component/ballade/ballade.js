@@ -43,7 +43,7 @@ function Ballade() {
     };
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/ballades').then((actualData) => {
+        axios.get('http://api.gowithdog.fr/api/ballades').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);

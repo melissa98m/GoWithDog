@@ -42,7 +42,7 @@ function Tag() {
     };
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/tags').then((actualData) => {
+        axios.get('http://api.gowithdog.fr/api/tags').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);
