@@ -74,7 +74,7 @@ function Home() {
                     <CardMedia
                         component="img"
                         height="160"
-                        image={`http://127.0.0.1:8000/storage/uploads/ballades/${ballade_image}`}
+                        image={`http://api.gowithdog.fr/storage/uploads/ballades/${ballade_image}`}
                         alt={ballade_name}
                     />
                     <CardContent>
