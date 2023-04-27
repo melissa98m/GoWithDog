@@ -31,6 +31,8 @@ function Login() {
       formData.append('password', password)
       let res = await axios.post("http://api.gowithdog.fr/api/login", formData, {
         "headers" : { "Content-Type":"multipart/form-data" }
+        console.log(res)
+
       });
       if (res.status === 200) {
           localStorage.setItem("access_token", res.data.token)
@@ -38,7 +40,6 @@ function Login() {
       } else {
         setToastMessage({message: "Une erreur est survenue", severity: "error"});
         setShowToast(true);
-        console.log(res)
     }
 } catch (err) {
     let errors = err.response.data;
