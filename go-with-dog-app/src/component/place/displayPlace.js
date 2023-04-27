@@ -61,7 +61,7 @@ function DisplayPlace(place) {
                                         <Button variant="outlined"  color="secondary" onClick={() => setShowDisplay(false)}><CloseIcon /></Button>
                                     </Grid>
                     <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="edit-place-title">{place_name}</Typography>
-                    <Box component="img" src={`https://go-with-dog.vercel.app/storage/uploads/places/${place_image}`} alt={place_image} sx={{ width: "400px"  , margin: "auto" , textAlign: "center"}}/>
+                    <Box component="img" src={`http://api.gowithdog.fr/storage/uploads/places/${place_image}`} alt={place_image} sx={{ width: "400px"  , margin: "auto" , textAlign: "center"}}/>
                     <Box sx={{ marginTop: 3 }}>
                         {place_description}
                     </Box>

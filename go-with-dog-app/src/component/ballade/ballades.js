@@ -36,7 +36,7 @@ function Ballades() {
 
 
     useEffect(() => {
-        axios.get('https://api.gowithdog.fr/api/ballades').then((actualData) => {
+        axios.get('http://api.gowithdog.fr/api/ballades').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);
@@ -96,7 +96,7 @@ function Ballades() {
                                             <CardMedia
                                                 component="img"
                                                 height="140"
-                                                src={`https://go-with-dog.vercel.app/storage/uploads/ballades/${ballade_image}`}
+                                                src={`http://127.0.0.1:8000/storage/uploads/ballades/${ballade_image}`}
                                                 alt={ballade_name}
                                             />
                                             <CardContent>

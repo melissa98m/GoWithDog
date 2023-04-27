@@ -61,8 +61,8 @@ function NewPlace(props) {
     }
 
     let getAlls = async () => {
-        await axios.get("https://api.gowithdog.fr/api/categories/" ).then((actualData) => { setCategories(actualData.data.data) });
-        await axios.get("https://api.gowithdog.fr/api/addresses/").then((actualData) => { setAddresses(actualData.data.data)});
+        await axios.get("http://api.gowithdog.fr/api/categories/" ).then((actualData) => { setCategories(actualData.data.data) });
+        await axios.get("http://api.gowithdog.fr/api/addresses/").then((actualData) => { setAddresses(actualData.data.data)});
     }
 
     let newPlaceForm = async () => {
@@ -84,7 +84,7 @@ function NewPlace(props) {
                 address: address
             };
 
-            let res = await axios.post('https://api.gowithdog.fr/api/places/', formData, {
+            let res = await axios.post('http://api.gowithdog.fr/api/places/', formData, {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             });
             if (res.status === 200) {

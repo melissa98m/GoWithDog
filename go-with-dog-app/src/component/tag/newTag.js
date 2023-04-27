@@ -21,7 +21,7 @@ function NewTag(props) {
 
     let newTagForm = async () => {
         try {
-            let res = await axios.post('https://api.gowithdog.fr/api/tags/', {tag_name , color} , {
+            let res = await axios.post('http://api.gowithdog.fr/api/tags/', {tag_name , color} , {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             })
             if (res.status === 200) {

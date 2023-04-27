@@ -15,7 +15,7 @@ function DeleteTag(props) {
     let deleteTag = async (e) => {
         e.preventDefault();
         try {
-            let res = await axios.delete('https://api.gowithdog.fr/api/tags/' + oneTag.id , {
+            let res = await axios.delete('http://api.gowithdog.fr/api/tags/' + oneTag.id , {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             })
             if (res.status === 200) {

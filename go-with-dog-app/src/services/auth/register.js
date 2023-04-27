@@ -84,7 +84,7 @@ function Register () {
             formData.append("password", password);
             formData.append("username", username);
 
-            let res = await axios.post('https://api.gowithdog.fr/api/register/', formData, {
+            let res = await axios.post('http://api.gowithdog.fr/api/register/', formData, {
                 "headers" : { "Content-Type":"multipart/form-data" }
             });
             if (res.status === 200) {
