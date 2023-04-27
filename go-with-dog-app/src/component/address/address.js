@@ -42,7 +42,7 @@ function Address() {
     };
 
     useEffect(() => {
-        axios.get('http://api.gowithdog.fr/api/addresses').then((actualData) => {
+        axios.get('https://api.gowithdog.fr/api/addresses').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);

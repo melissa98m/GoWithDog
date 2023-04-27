@@ -67,7 +67,7 @@ function NewBallade(props) {
     }
 
     let getAlls = async () => {
-        await axios.get("http://api.gowithdog.fr/api/tags" ).then((actualData) => { setTags(actualData.data.data) });
+        await axios.get("https://api.gowithdog.fr/api/tags" ).then((actualData) => { setTags(actualData.data.data) });
     }
 
     let newBalladeForm = async () => {
@@ -96,7 +96,7 @@ function NewBallade(props) {
 
             };
 
-            let res = await axios.post('http://api.gowithdog.fr/api/ballades', formData, {
+            let res = await axios.post('https://api.gowithdog.fr/api/ballades', formData, {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             });
             if (res.status === 200) {
@@ -107,7 +107,7 @@ function NewBallade(props) {
                  ballade_longitude: tab.ballade_longitude ,distance : tab.distance , denivele : tab.denivele , ballade_image: tab.ballade_image, tag: tab.tag}]})
                 props.handleDataChange(data);
                 reset();
-                setToastMessage({message: "Ballade ajoutée ! Vous pouvez en ajouter une autre", severity: "success"});
+                setToastMessage({message: "Balade ajoutée ! Vous pouvez en ajouter une autre", severity: "success"});
                 setShowToast(true);
             } else {
                 setToastMessage({message: "Une erreur est survenue", severity: "error"});
@@ -132,7 +132,7 @@ function NewBallade(props) {
                <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
                            <Button variant="outlined"  color="secondary" onClick={() => setShowNew(false)}><CloseIcon /></Button>
                             </Grid>
-                <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="new-ballade-title">Nouveau lieu</Typography>
+                <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="new-ballade-title">Nouvelle balade</Typography>
                 <form onSubmit={handleSubmit(newBalladeForm)}>
                     <Grid container spacing={8}>
                         <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'column'}}>

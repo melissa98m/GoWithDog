@@ -15,7 +15,7 @@ function DeleteBallade(props) {
     let deleteBallade = async (e) => {
         e.preventDefault();
         try {
-            let res = await axios.delete('http://api.gowithdog.fr/api/ballades/' + oneBallade.id , {
+            let res = await axios.delete('https://api.gowithdog.fr/api/ballades/' + oneBallade.id , {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             })
             if (res.status === 200) {
@@ -54,7 +54,7 @@ function DeleteBallade(props) {
                  <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
                  <Button variant="outlined"  color="secondary" onClick={() => setShowDelete(false)}><CloseIcon /></Button>
                   </Grid>
-                    <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="delete-ballade-title">Supprimer la ballade</Typography>
+                    <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="delete-ballade-title">Supprimer la balade</Typography>
                     <FormControl>
                         <Box>
                             êtes vous sur de vouloir supprimer le lieu : {oneBallade.ballade_name} ?

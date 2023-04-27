@@ -36,7 +36,7 @@ function Account() {
 
 
     useEffect(() => {
-        axios.get('http://api.gowithdog.fr/api/current-user'
+        axios.get('https://api.gowithdog.fr/api/current-user'
         ,{"headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') } }).then((actualData) => {
             //actualData = actualData.data;
             setLoading(true)
@@ -53,7 +53,7 @@ function Account() {
     }, []);
 
     let getPlaces = async () => {
-            await axios.get("http://api.gowithdog.fr/api/places-user" ,
+            await axios.get("https://api.gowithdog.fr/api/places-user" ,
             {"headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') } }).then((actualData) => {
             setPlaces(actualData.data.data)
             })
@@ -61,7 +61,7 @@ function Account() {
             }
 
       let getBallades = async () => {
-                await axios.get("http://api.gowithdog.fr/api/ballades-user" ,
+                await axios.get("https://api.gowithdog.fr/api/ballades-user" ,
                 {"headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') } }).then((actualData) => {
                 setBallades(actualData.data.data)
                 })
@@ -94,7 +94,7 @@ function Account() {
                                             <CardMedia
                                                 component="img"
                                                 height="140"
-                                                src={`http://api.gowithdog.fr/storage/uploads/places/${place_image}`}
+                                                src={`https://api.gowithdog.fr/storage/uploads/places/${place_image}`}
                                                 alt={place_name}
                                             />
                                             <CardContent>
@@ -129,7 +129,7 @@ function Account() {
                                                             <CardMedia
                                                                 component="img"
                                                                 height="140"
-                                                                src={`http://127.0.0.1:8000/storage/uploads/ballades/${ballade_image}`}
+                                                                src={`https://api.gowithdog.fr/storage/uploads/ballades/${ballade_image}`}
                                                                 alt={ballade_name}
                                                             />
                                                             <CardContent>

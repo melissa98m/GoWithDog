@@ -43,7 +43,7 @@ function Place() {
     };
 
     useEffect(() => {
-        axios.get('http://api.gowithdog.fr/api/places').then((actualData) => {
+        axios.get('https://api.gowithdog.fr/api/places').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);

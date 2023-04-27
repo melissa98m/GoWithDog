@@ -72,7 +72,7 @@ function DisplayBallade(ballade) {
                      <Box sx={{ marginTop: 3 }}>
                        <Typography gutterBottom variant="body1" component="div" color={tag.color} sx={{textAlign: 'center', mb: 4}}>{tag.tag_name}</Typography>
                      </Box>
-                    <Box component="img" src={`http://api.gowithdog.fr/storage/uploads/ballades/${ballade_image}`} alt={ballade_image} sx={{ width: "400px"  , margin: "auto" , textAlign: "center"}}/>
+                    <Box component="img" src={`https://api.gowithdog.fr/storage/uploads/ballades/${ballade_image}`} alt={ballade_image} sx={{ width: "400px"  , margin: "auto" , textAlign: "center"}}/>
                     <Box sx={{ marginTop: 3 }}>
                         {ballade_description}
                     </Box>

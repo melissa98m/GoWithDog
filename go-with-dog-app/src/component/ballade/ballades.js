@@ -19,7 +19,7 @@ import auth from "../../services/auth/token";
 
 function Ballades() {
 
-    document.title = 'Toutes les ballades';
+    document.title = 'Toutes les balades';
 
     const [data, setData] = useState(null); // array of data
     const [loading, setLoading] = useState(true);
@@ -36,7 +36,7 @@ function Ballades() {
 
 
     useEffect(() => {
-        axios.get('http://api.gowithdog.fr/api/ballades').then((actualData) => {
+        axios.get('https://api.gowithdog.fr/api/ballades').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);
@@ -83,7 +83,7 @@ function Ballades() {
                 </Select>
                 </Box>
             {loading ? (
-                <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>
+                <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des balades...</Typography>
             ) : (
 
                 <Box sx={{ maxWidth: '90%' }}>
@@ -96,7 +96,7 @@ function Ballades() {
                                             <CardMedia
                                                 component="img"
                                                 height="140"
-                                                src={`http://api.gowithdog.fr/storage/uploads/ballades/${ballade_image}`}
+                                                src={`https://api.gowithdog.fr/storage/uploads/ballades/${ballade_image}`}
                                                 alt={ballade_name}
                                             />
                                             <CardContent>

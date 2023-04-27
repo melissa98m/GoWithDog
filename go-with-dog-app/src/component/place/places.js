@@ -35,7 +35,7 @@ function Places() {
 
 
     useEffect(() => {
-        axios.get('http://api.gowithdog.fr/api/places').then((actualData) => {
+        axios.get('https://api.gowithdog.fr/api/places').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);
@@ -101,7 +101,7 @@ function Places() {
                                             <CardMedia
                                                 component="img"
                                                 height="140"
-                                                src={`http://api.gowithdog.fr/storage/uploads/places/${place_image}`}
+                                                src={`https://api.gowithdog.fr/storage/uploads/places/${place_image}`}
                                                 alt={place_name}
                                             />
                                             <CardContent>

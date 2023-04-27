@@ -15,7 +15,7 @@ function DeletePlace(props) {
     let deletePlace = async (e) => {
         e.preventDefault();
         try {
-            let res = await axios.delete('http://api.gowithdog.fr/api/places/' + onePlace.id , {
+            let res = await axios.delete('https://api.gowithdog.fr/api/places/' + onePlace.id , {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             })
             if (res.status === 200) {

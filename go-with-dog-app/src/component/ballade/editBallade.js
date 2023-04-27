@@ -58,7 +58,7 @@ function EditBallade(props) {
     }, [])
 
     let getAlls = async () => {
-        await axios.get("http://api.gowithdog.fr/api/tags").then((actualData) => { setTags(actualData.data.data) });
+        await axios.get("https://api.gowithdog.fr/api/tags").then((actualData) => { setTags(actualData.data.data) });
     }
 
     let editBalladeForm = async () => {
@@ -89,7 +89,7 @@ function EditBallade(props) {
                 tag: tag ? tag : oneBallade.tag.id,
             }
 
-            let res = await axios.post("http://api.gowithdog.fr/api/ballades/" + oneBallade.id, formData, {
+            let res = await axios.post("https://api.gowithdog.fr/api/ballades/" + oneBallade.id, formData, {
                 "headers" : { "Authorization":"Bearer"+localStorage.getItem('access_token') }
             })
             if (res.status === 200) {
@@ -140,7 +140,7 @@ function EditBallade(props) {
             <Grid item xs={12} className="action-button" sx={{ minwidth: '100%' }}>
             <Button variant="outlined"  color="secondary" onClick={() => setShowEdit(false)}><CloseIcon /></Button>
              </Grid>
-                <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="edit-ballade-title">Editer un lieu</Typography>
+                <Typography variant="h4" sx={{textAlign: 'center', mb: 4}} id="edit-ballade-title">Editer une balade</Typography>
                 <form onSubmit={handleSubmit(editBalladeForm)}>
                     <Grid container spacing={8}>
                         <Grid item xs={6} sx={{ display: 'flex',flexDirection: 'column'}}>
@@ -245,7 +245,7 @@ function EditBallade(props) {
                               control={control}
                               render={() => (
                                   <Box sx={{ display: 'flex'}}>
-                                      <Box component="img" src={`http://api.gowithdog.fr/storage/uploads/ballades/${cImage}`} alt={cImage} sx={{ width: "80px", mr: 3 }}/>
+                                      <Box component="img" src={`https://api.gowithdog.fr/storage/uploads/ballades/${cImage}`} alt={cImage} sx={{ width: "80px", mr: 3 }}/>
                                       <Input
                                        type='file'
                                        {...register('ballade_image')}

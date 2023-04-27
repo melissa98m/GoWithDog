@@ -43,7 +43,7 @@ function Ballade() {
     };
 
     useEffect(() => {
-        axios.get('http://api.gowithdog.fr/api/ballades').then((actualData) => {
+        axios.get('https://api.gowithdog.fr/api/ballades').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);
@@ -71,7 +71,7 @@ function Ballade() {
         <Paper sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', py: 10}}>
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Ballades</Typography>
             {loading ? (
-                <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>
+                <Typography variant="h5" sx={{textAlign: "center"}} gutterBottom>Chargement des balades...</Typography>
             ) : (
                 <Box sx={{ maxWidth: '90%' }}>
                     <NewBallade newValue={{data}} handleDataChange={handleDataChange} />
@@ -100,7 +100,7 @@ function Ballade() {
                                             <TableCell  sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>{ballade_description.slice(0,30) ?? '--'}</TableCell>
                                             <TableCell sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>
                                                 { ballade_image ? (
-                                                    <Box component="img" src={`http://api.gowithdog.fr/storage/uploads/ballades/${ballade_image}`} alt={ballade_image} sx={{ width: "80px" }}/>
+                                                    <Box component="img" src={`https://api.gowithdog.fr/storage/uploads/ballades/${ballade_image}`} alt={ballade_image} sx={{ width: "80px" }}/>
                                                 ) : (
                                                     '--'
                                                 ) }
