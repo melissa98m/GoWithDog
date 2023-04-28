@@ -37,6 +37,7 @@ const Contact = () => {
      };
 
     return (
+    <Container maxWidth="xl" id="contact">
             <Box className="" sx={{bgcolor: 'background.default'}}>
                 <Typography variant="h1" sx={{textAlign: 'center', mb: 4 , fontSize: "25px" , fontWeight: "bold" }} id="new-contact">Contactez-nous</Typography>
                 <Typography variant="body" sx={{textAlign: 'center' , display: 'flex' , justifyContent: 'center' , m: 2}}>Vous avez une question? une demande , n'hésitez pas à nous contacter via ce formulaire , nous vous répondrons le plus vite possible.</Typography>
@@ -128,6 +129,7 @@ const Contact = () => {
             </Alert>
         </Snackbar>
     </Box>
+    </Container>
 
     )
 };
