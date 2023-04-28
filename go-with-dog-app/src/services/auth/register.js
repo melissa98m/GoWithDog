@@ -89,7 +89,7 @@ function Register () {
             });
             if (res.status === 200) {
                 setErrMessage('')
-                navigate('/login'););
+                navigate('/login')
             } else {
                 setToastMessage({message: "Une erreur est survenue", severity: "error"});
                 setShowToast(true);
