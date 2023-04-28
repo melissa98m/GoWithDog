@@ -89,8 +89,7 @@ function Register () {
             });
             if (res.status === 200) {
                 setErrMessage('')
-                localStorage.setItem('access_token', res.data.token)
-                navigate('/', { replace: true });
+                navigate('/login'););
             } else {
                 setToastMessage({message: "Une erreur est survenue", severity: "error"});
                 setShowToast(true);
