@@ -90,7 +90,7 @@ function Account() {
                     <Box sx={{ maxWidth: '100%' }}>
                                 {places.map(({id, place_name, place_description , place_image, category, created_at, address}) => {
                         return (
-                       <Card sx={{ display: 'inline-block' , margin: '10px' }} key={id}>
+                       <Card sx={{ display: 'inline-block' , margin: '10px' , width: '200px'}} key={id}>
                                             <CardMedia
                                                 component="img"
                                                 height="140"
@@ -125,7 +125,7 @@ function Account() {
                                     <Box sx={{ maxWidth: '100%' }}>
                                                 {ballades.map(({id, ballade_name, ballade_description, ballade_image, tag,  ballade_latitude , ballade_longitude,denivele , distance ,created_at , data}) => {
                                         return (
-                                       <Card sx={{ display: 'inline-block' , margin: "10px"}} key={id}>
+                                       <Card sx={{ display: 'inline-block' , margin: "10px" , width: '200px'}} key={id}>
                                                             <CardMedia
                                                                 component="img"
                                                                 height="140"
