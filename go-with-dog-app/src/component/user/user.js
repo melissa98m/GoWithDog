@@ -81,22 +81,24 @@ function User() {
                                 <TableRow>
                                     <TableCell key={1}>ID</TableCell>
                                     <TableCell key={2}>Username</TableCell>
-                                    <TableCell key={3}>Roles</TableCell>
-                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={4}>Créer le</TableCell>
-                                    <TableCell key={5} align={'right'}>Actions</TableCell>
+                                    <TableCell key={3}>Email</TableCell>
+                                    <TableCell key={4}>Roles</TableCell>
+                                    <TableCell sx={{ display: { xs: 'none', lg: 'table-cell' } }} key={5}>Créer le</TableCell>
+                                    <TableCell key={6} align={'right'}>Actions</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(({id, username, roles, created_at  }) => {
+                                {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(({id, username, email, roles, created_at  }) => {
                                     return (
                                         <TableRow hover role="checkbox" tabIndex={-1} key={username+id}>
                                             <TableCell>{id}</TableCell>
                                             <TableCell sx={{fontWeight: 'bold'}}>{username ?? '--'}</TableCell>
+                                            <TableCell sx={{fontWeight: 'bold'}}>{email ?? '--'}</TableCell>
                                             <TableCell sx={{fontWeight: 'bold'}}>{ roles ?? '--'}</TableCell>
                                              <TableCell sx={{fontWeight: 'bold' , display: { xs: 'none', lg: 'table-cell' } }}>{ created_at.slice(0, 16)  ?? '--'}</TableCell>
                                             <TableCell>
                                                 <Box sx={{display: 'flex', justifyContent: 'right'}}>
-                                                    <DeleteUser deleteValue={{id, username, roles, data}} handleDataChange={handleDataChange}/>
+                                                    <DeleteUser deleteValue={{id, username, email , roles, data}} handleDataChange={handleDataChange}/>
                                                 </Box>
                                             </TableCell>
                                         </TableRow>
