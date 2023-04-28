@@ -66,7 +66,7 @@ function Address() {
         }
     }
 
-    return <Container maxWidth="md" id="address">
+    return <Container sx={{ width : '80%'}} id="address">
         <Paper sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', py: 10}}>
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Adresses</Typography>
             {loading ? (

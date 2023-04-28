@@ -67,7 +67,7 @@ function Ballade() {
         }
     }
 
-    return <Container maxWidth="xl" id="ballade">
+    return <Container sx={{ width : '80%'}} id="ballade">
         <Paper sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', py: 10}}>
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Ballades</Typography>
             {loading ? (

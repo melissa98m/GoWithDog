@@ -65,7 +65,7 @@ function Category() {
             setShowToast(true);
         }
     }
-    return <Container maxWidth="md" id="category">
+    return <Container sx={{ width : '80%'}} id="category">
         <Paper sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', py: 10}}>
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Categories</Typography>
             {loading ? (

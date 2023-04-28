@@ -67,7 +67,7 @@ function Place() {
         }
     }
 
-    return <Container maxWidth="xl" id="place">
+    return <Container sx={{ width : '80%'}} id="place">
         <Paper sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', py: 10}}>
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Places</Typography>
             {loading ? (

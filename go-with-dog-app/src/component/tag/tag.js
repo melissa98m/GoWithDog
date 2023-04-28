@@ -66,7 +66,7 @@ function Tag() {
         }
     }
 
-    return <Container maxWidth="md" id="tag">
+    return <Container sx={{ width : '80%'}} id="tag">
         <Paper sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', py: 10}}>
             <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>Tags des ballades</Typography>
             {loading ? (
