@@ -134,7 +134,7 @@ function Home() {
           </Grid>
 </Box>
 
-  <Typography variant="h4" sx={{textAlign: "left" , marginTop: "35px"}} gutterBottom>Tout les lieux</Typography>
+  <Typography variant="h2" sx={{textAlign: "left" , marginTop: "35px"}} gutterBottom>Tout les lieux</Typography>
   {loading ? (
    <Typography variant="body" sx={{textAlign: "center"}} gutterBottom>Chargement des ballades...</Typography>
           ) : (
