@@ -19,7 +19,7 @@ const Contact = () => {
     }});
     const [message , setMessage] = useState("");
 
-    //Méthode d'ajout de joueurs
+
      const newContact = async () => {
        //e.preventDefault();
        const formData = new FormData();
