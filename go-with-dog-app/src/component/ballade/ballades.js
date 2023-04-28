@@ -103,13 +103,13 @@ function Ballades() {
                                                 <Typography gutterBottom variant="h5" component="div">
                                                     {ballade_name}
                                                 </Typography>
-                                                <Box>
+                                                <Box sx={{ display : 'flex'}}>
                                                  Niveau:<Typography gutterBottom variant="body1" component="div" color={tag.color} >{tag.tag_name}</Typography>
                                                 </Box>
                                                 <Box>
                                                  <Typography variant="body" sx={{ marginTop: "25px" , textAlign: "left" , marginLeft: "5px"}} >Détails: </Typography>
-                                                 <Typography variant="body2" sx={{ marginTop: "5px"}} color="text.secondary"><TrendingUpIcon />{denivele}m </Typography>
-                                                 <Typography variant="body2" color="text.secondary"><LinearScaleIcon sx={{ paddingTop: "10px"}}/>{distance}km </Typography>
+                                                 <Typography variant="body2" sx={{ marginTop: "5px"}} component="div" color="text.secondary"><TrendingUpIcon />{denivele}m </Typography>
+                                                 <Typography variant="body2" color="text.secondary" component="div"><LinearScaleIcon sx={{ paddingTop: "10px"}}/>{distance}km </Typography>
                                                   </Box>
                                             </CardContent>
                                             <Box>
