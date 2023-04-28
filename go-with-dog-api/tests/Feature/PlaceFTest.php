@@ -2,6 +2,7 @@
 use App\Models\Address;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Place;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -35,5 +36,15 @@ class PlaceFTest extends TestCase
         $response->assertRedirect('/places');
         $this->assertDatabaseHas('places', ['place_name' => 'New Place']);
         Storage::disk('public')->assertExists('images/places/' . $image->hashName());
+    }
+    public function user_can_view_place()
+    {
+        $place = factory(Place::class)->create();
+
+        $response = $this->get('/places/' . $place->id);
+
+        $response->assertStatus(200)
+            ->assertSee($place->place_name)
+            ->assertSee($place->place_description);
     }
 }
