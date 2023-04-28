@@ -287,7 +287,7 @@ function NewBallade(props) {
                                 required: 'Ce champ est requis'
                                   }
                                     )}
-                                     type="number"
+
                                      onChange={(e) => setDistance(e.target.value)}
                                      sx={{mt: 5, height: 50}}
                                      label="Distance en km"
