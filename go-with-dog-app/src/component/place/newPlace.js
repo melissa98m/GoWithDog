@@ -202,6 +202,7 @@ function NewPlace(props) {
                                       <Select
                                         labelId="category-select"
                                         id="category-select"
+                                        data-testid="select-category"
                                         value={category}
                                         label="Categorie de lieu"
                                         onChange={(e) => setCategory(e.target.value)}

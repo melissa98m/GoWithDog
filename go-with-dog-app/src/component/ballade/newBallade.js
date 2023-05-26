@@ -261,6 +261,7 @@ function NewBallade(props) {
                                       <Select
                                         labelId="tag-select"
                                         id="tag-select"
+                                        data-testid="select-tag"
                                         value={tag}
                                         label="Tag"
                                         onChange={(e) => setTag(e.target.value)}
