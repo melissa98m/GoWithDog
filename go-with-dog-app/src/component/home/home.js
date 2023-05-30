@@ -39,7 +39,7 @@ function Home() {
 
 
     useEffect(() => {
-        axios.get('https://api.gowithdog.fr/api/ballades/sortDateDesc').then((actualData) => {
+        axios.get('https://api.gowithdog.fr/api/ballades').then((actualData) => {
             actualData = actualData.data;
             setLoading(true)
             setData(actualData.data);
