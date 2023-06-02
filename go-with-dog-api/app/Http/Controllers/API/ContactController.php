@@ -16,7 +16,8 @@ class ContactController extends Controller
         $request->validate([
             'email' => 'required',
             'subject'=>'required',
-            'contenu' => 'required'
+            'contenu' => 'required',
+            'g-recaptcha-response' => 'required|recaptcha',
         ]);
 
         $contact = Contact::create([ // Assigne les valeurs saisies dans le formulaire au champs correspondant dans la bd (création de la nouvelle opération)
