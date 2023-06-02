@@ -3,6 +3,7 @@ import {useState} from "react";
 import update from "immutability-helper";
 import {useForm, Controller} from "react-hook-form";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 
@@ -112,6 +113,7 @@ const Contact = () => {
                                                      {errors.contenu ? (
                                                          <Alert sx={{mt:2, p:0, pl:2}} severity="error">{errors.contenu?.message}</Alert>
                                                      ) : ''}
+                                                      <ReCAPTCHA sitekey="6LegrV4mAAAAANQRfedS_8LZsgJpSzNvuH8x3DtB" />
                         <Box className="action-button">
                             <Button type="submit" sx={{m: 3}} variant="contained">Envoyer</Button>
                              {message}
